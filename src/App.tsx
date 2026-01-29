@@ -4,7 +4,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Methodology from './pages/Methodology';
 import PanelsStudies from './pages/PanelsStudies';
-import ResearchAreas from './pages/ResearchAreas';
 import About from './pages/About';
 import Access from './pages/Access';
 
@@ -18,13 +17,11 @@ function App() {
       case 'Methodology':
         return <Methodology />;
       case 'Panels & Studies':
-        return <PanelsStudies />;
-      case 'Research Areas':
-        return <ResearchAreas />;
+        return <PanelsStudies onNavigate={setCurrentPage} />;
       case 'About':
         return <About />;
       case 'Access':
-        return <Access />;
+        return <Access onNavigate={setCurrentPage} />;
       default:
         return <Home onNavigate={setCurrentPage} />;
     }
@@ -35,7 +32,7 @@ function App() {
       <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
 
       <main className="flex-grow">
-        <div className="max-w-5xl mx-auto px-8 py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-8 py-16 md:py-20">
           {renderPage()}
         </div>
       </main>

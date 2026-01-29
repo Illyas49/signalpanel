@@ -5,7 +5,7 @@ interface HomeProps {
 export default function Home({ onNavigate }: HomeProps) {
   return (
     <div className="space-y-16">
-      <section>
+      <section className="bg-stone-100 -mx-8 px-8 py-16 md:-mx-16 md:px-16">
         <h1 className="mb-8">
           Structured research on user experience in age-restricted digital environments
         </h1>
@@ -46,17 +46,17 @@ export default function Home({ onNavigate }: HomeProps) {
         <p>All findings are reported at an aggregated level.</p>
       </section>
 
-      <section>
-        <div className="flex gap-6 pt-8">
+      <section className="pt-4">
+        <div className="flex gap-4">
           <button
             onClick={() => onNavigate('Methodology')}
-            className="text-stone-700 underline hover:text-stone-900 transition-colors"
+            className="px-6 py-3 border-2 border-stone-900 bg-white text-stone-900 hover:bg-stone-900 hover:text-white transition-colors"
           >
             View Methodology
           </button>
           <button
-            onClick={() => onNavigate('Research Areas')}
-            className="text-stone-700 underline hover:text-stone-900 transition-colors"
+            onClick={() => onNavigate('About')}
+            className="px-6 py-3 border-2 border-stone-300 bg-white text-stone-900 hover:border-stone-900 transition-colors"
           >
             Explore Research Areas
           </button>

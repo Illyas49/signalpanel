@@ -4,7 +4,7 @@ interface NavigationProps {
 }
 
 export default function Navigation({ currentPage, onNavigate }: NavigationProps) {
-  const pages = ['Home', 'Methodology', 'Panels & Studies', 'Research Areas', 'About', 'Access'];
+  const pages = ['Home', 'Methodology', 'Panels & Studies', 'About', 'Access'];
 
   return (
     <nav className="border-b border-stone-300 bg-stone-50">
