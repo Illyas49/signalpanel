@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-stone-300 mt-32">
+    <footer className="border-t border-stone-300">
       <div className="max-w-5xl mx-auto px-8 py-12">
         <div className="space-y-4 text-sm text-stone-600">
           <p>SignalPanel is an independent research organization.</p>
