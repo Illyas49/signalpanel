@@ -45,7 +45,7 @@ export default function PanelsStudies({ onNavigate }: PanelsStudiesProps) {
           )}
         </div>
 
-        <div className="space-y-8 mt-8 opacity-50">
+        <div className="space-y-8 mt-8 blur-sm select-none">
           <div className="border-l-2 border-stone-300 pl-6">
             <p className="font-semibold">Study ID: SP-021</p>
             <p><span className="text-stone-600">Research Focus:</span> Onboarding comprehension</p>
