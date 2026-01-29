@@ -15,6 +15,14 @@ export default function Home({ onNavigate }: HomeProps) {
         </p>
       </section>
 
+      <section className="relative w-full h-96 -mx-8 md:-mx-16 overflow-hidden">
+        <img
+          src="https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="Research and data analysis"
+          className="w-full h-full object-cover"
+        />
+      </section>
+
       <section>
         <p>
           SignalPanel is an independent research organization focused on the design, execution, and
