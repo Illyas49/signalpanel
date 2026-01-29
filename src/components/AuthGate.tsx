@@ -23,7 +23,6 @@ export default function AuthGate({ onNavigate }: AuthGateProps) {
       <div className="flex justify-center">
         <AuthForm
           mode={mode}
-          onSuccess={() => window.location.reload()}
           onToggleMode={toggleMode}
         />
       </div>
