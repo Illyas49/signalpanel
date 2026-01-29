@@ -18,7 +18,7 @@ export default function Access({ onNavigate }: AccessProps) {
       setLoading(false);
     })();
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       (async () => {
         setIsAuthenticated(!!session);
       })();
