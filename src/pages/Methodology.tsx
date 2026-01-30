@@ -1,105 +1,183 @@
+import { Users, Target, CheckCircle, BarChart3, Shield, AlertTriangle } from 'lucide-react';
+
 export default function Methodology() {
   return (
-    <div className="space-y-20">
-      <section>
-        <h1 className="mb-8">Methodology</h1>
-        <div className="h-1 w-24 bg-stone-800"></div>
+    <div>
+      <section className="py-16 md:py-20 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-8 md:-mx-16 px-8 md:px-16">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="mb-6">Methodology</h1>
+          <div className="h-1 w-24 bg-slate-700 mb-8"></div>
+          <p className="text-xl text-stone-600 max-w-3xl" style={{ lineHeight: '1.7' }}>
+            Structured research protocols for observing user interaction in regulated digital environments
+          </p>
+        </div>
       </section>
 
-      <section className="max-w-4xl">
-        <h2 className="mb-6">Overview</h2>
-        <p className="mb-6 leading-relaxed">
-          SignalPanel applies a structured research methodology built around curated panels, defined
-          study scopes, and standardized evaluation criteria. Research design emphasizes internal
-          consistency, transparent parameter selection, and reproducible procedures.
-        </p>
-        <p className="mb-6 leading-relaxed">
-          The methodology prioritizes consistency, repeatability, and interpretability across studies and
-          jurisdictions. Each study operates within clearly defined boundaries to limit variability and
-          improve comparability between discrete research exercises.
-        </p>
-        <p className="leading-relaxed">
-          Findings are intended to describe observed patterns in user interaction and interface design.
-          They are not intended to predict future user behavior, assess platform quality, or inform
-          commercial or regulatory decision-making.
-        </p>
+      <section className="py-20 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="flex items-start gap-4">
+            <div className="p-3 bg-slate-100 rounded flex-shrink-0">
+              <Target className="w-6 h-6 text-slate-700" />
+            </div>
+            <div>
+              <h3 className="font-bold text-stone-900 mb-2">Structured Design</h3>
+              <p className="text-sm text-stone-600" style={{ lineHeight: '1.7' }}>
+                Curated panels and standardized evaluation criteria
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="p-3 bg-slate-100 rounded flex-shrink-0">
+              <CheckCircle className="w-6 h-6 text-slate-700" />
+            </div>
+            <div>
+              <h3 className="font-bold text-stone-900 mb-2">Repeatability</h3>
+              <p className="text-sm text-stone-600" style={{ lineHeight: '1.7' }}>
+                Reproducible procedures and transparent parameters
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="p-3 bg-slate-100 rounded flex-shrink-0">
+              <BarChart3 className="w-6 h-6 text-slate-700" />
+            </div>
+            <div>
+              <h3 className="font-bold text-stone-900 mb-2">Aggregated Findings</h3>
+              <p className="text-sm text-stone-600" style={{ lineHeight: '1.7' }}>
+                Descriptive patterns without predictive claims
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#EEF1F5] p-8 md:p-10 border-l-4 border-slate-700">
+          <p className="mb-4" style={{ lineHeight: '1.7' }}>
+            SignalPanel applies a structured research methodology built around curated panels, defined
+            study scopes, and standardized evaluation criteria. Research design emphasizes internal
+            consistency, transparent parameter selection, and reproducible procedures.
+          </p>
+          <p className="mb-4" style={{ lineHeight: '1.7' }}>
+            The methodology prioritizes consistency, repeatability, and interpretability across studies and
+            jurisdictions. Each study operates within clearly defined boundaries to limit variability and
+            improve comparability between discrete research exercises.
+          </p>
+          <p style={{ lineHeight: '1.7' }}>
+            Findings are intended to describe observed patterns in user interaction and interface design.
+            They are not intended to predict future user behavior, assess platform quality, or inform
+            commercial or regulatory decision-making.
+          </p>
+        </div>
       </section>
 
-      <div className="border-t border-stone-200"></div>
+      <div className="border-t-2 border-stone-200 my-20"></div>
 
-      <section className="max-w-4xl">
-        <h2 className="mb-6">Panel Construction</h2>
-        <p className="mb-6 leading-relaxed">
+      <section className="max-w-5xl mx-auto py-12">
+        <div className="flex items-start gap-6 mb-10">
+          <div className="p-4 bg-slate-100 rounded">
+            <Users className="w-8 h-8 text-slate-700" />
+          </div>
+          <div>
+            <h2 className="mb-4">Panel Construction</h2>
+            <p className="text-lg text-stone-600 max-w-3xl" style={{ lineHeight: '1.7' }}>
+              Recruitment and qualification of vetted participants following documented protocols
+            </p>
+          </div>
+        </div>
+
+        <p className="mb-8 max-w-4xl" style={{ lineHeight: '1.7' }}>
           Research panels are composed of vetted participants selected based on predefined eligibility
           criteria. Recruitment processes follow documented protocols designed to ensure participants
           meet minimum requirements for age, residency, language proficiency, and technical access.
         </p>
-        <p className="mb-6 leading-relaxed">
-          Panels are structured to reflect variation across several dimensions:
-        </p>
-        <div className="bg-stone-50 p-6 mb-6 border-l-4 border-stone-300">
-          <p className="mb-3 font-semibold text-stone-900">Age eligibility</p>
-          <p className="mb-6 text-stone-700 leading-relaxed">
-            Participants are recruited across adult age groups to reflect different levels of digital
-            literacy and exposure to regulated environments.
-          </p>
 
-          <p className="mb-3 font-semibold text-stone-900">Jurisdictional relevance</p>
-          <p className="mb-6 text-stone-700 leading-relaxed">
-            Panel composition accounts for regulatory context, language, and regional variance in platform
-            availability and interface design.
-          </p>
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white border-2 border-stone-200 p-6">
+            <p className="font-bold text-stone-900 mb-3">Age Eligibility</p>
+            <p className="text-sm text-stone-700" style={{ lineHeight: '1.7' }}>
+              Participants recruited across adult age groups reflecting different levels of digital
+              literacy and exposure to regulated environments.
+            </p>
+          </div>
 
-          <p className="mb-3 font-semibold text-stone-900">Device and environment diversity</p>
-          <p className="text-stone-700 leading-relaxed">
-            Studies include participants using different devices, operating systems, and network
-            conditions where such variation may affect user experience.
-          </p>
+          <div className="bg-white border-2 border-stone-200 p-6">
+            <p className="font-bold text-stone-900 mb-3">Jurisdictional Relevance</p>
+            <p className="text-sm text-stone-700" style={{ lineHeight: '1.7' }}>
+              Panel composition accounts for regulatory context, language, and regional variance in platform
+              availability and interface design.
+            </p>
+          </div>
+
+          <div className="bg-white border-2 border-stone-200 p-6">
+            <p className="font-bold text-stone-900 mb-3">Device Diversity</p>
+            <p className="text-sm text-stone-700" style={{ lineHeight: '1.7' }}>
+              Studies include participants using different devices, operating systems, and network
+              conditions where variation may affect experience.
+            </p>
+          </div>
         </div>
-        <p className="leading-relaxed">
+
+        <p className="text-sm text-stone-600 max-w-4xl" style={{ lineHeight: '1.7' }}>
           Panel size and composition vary depending on study objectives. SignalPanel does not maintain
           standing panels; participants are recruited for specific studies and released upon completion.
         </p>
       </section>
 
-      <div className="border-t border-stone-200"></div>
+      <div className="border-t-2 border-stone-200 my-20"></div>
 
-      <section className="max-w-4xl">
-        <h2 className="mb-6">Study Design</h2>
-        <p className="mb-6 leading-relaxed">
+      <section className="max-w-5xl mx-auto py-12">
+        <div className="flex items-start gap-6 mb-10">
+          <div className="p-4 bg-slate-100 rounded">
+            <Target className="w-8 h-8 text-slate-700" />
+          </div>
+          <div>
+            <h2 className="mb-4">Study Design</h2>
+            <p className="text-lg text-stone-600 max-w-3xl" style={{ lineHeight: '1.7' }}>
+              Formal research protocols with fixed parameters and defined scope
+            </p>
+          </div>
+        </div>
+
+        <p className="mb-8 max-w-4xl" style={{ lineHeight: '1.7' }}>
           Each study is defined by a formal research protocol that specifies objectives, participant
           criteria, observation parameters, and analytical scope. Study design documents are prepared
           prior to recruitment and remain fixed throughout execution to preserve methodological integrity.
         </p>
-        <p className="mb-6 leading-relaxed">
-          Core elements of study design include:
-        </p>
-        <div className="bg-stone-50 p-6 mb-6 border-l-4 border-stone-300">
-          <p className="mb-3 font-semibold text-stone-900">Research objective</p>
-          <p className="mb-6 text-stone-700 leading-relaxed">
-            A clearly articulated question or area of investigation related to user interaction,
-            information design, or interface structure.
-          </p>
 
-          <p className="mb-3 font-semibold text-stone-900">Inclusion and exclusion criteria</p>
-          <p className="mb-6 text-stone-700 leading-relaxed">
-            Documented requirements that determine participant eligibility and environmental conditions
-            under which observations are conducted.
-          </p>
+        <div className="space-y-6 mb-8">
+          <div className="border-l-4 border-slate-700 pl-6 py-2">
+            <p className="font-bold text-stone-900 mb-2">Research Objective</p>
+            <p className="text-stone-700" style={{ lineHeight: '1.7' }}>
+              A clearly articulated question or area of investigation related to user interaction,
+              information design, or interface structure.
+            </p>
+          </div>
 
-          <p className="mb-3 font-semibold text-stone-900">Standardized observation parameters</p>
-          <p className="mb-6 text-stone-700 leading-relaxed">
-            Defined tasks, scenarios, or interaction sequences used consistently across participants to
-            enable pattern identification and aggregation.
-          </p>
+          <div className="border-l-4 border-slate-700 pl-6 py-2">
+            <p className="font-bold text-stone-900 mb-2">Inclusion & Exclusion Criteria</p>
+            <p className="text-stone-700" style={{ lineHeight: '1.7' }}>
+              Documented requirements that determine participant eligibility and environmental conditions
+              under which observations are conducted.
+            </p>
+          </div>
 
-          <p className="mb-3 font-semibold text-stone-900">Limited scope and duration</p>
-          <p className="text-stone-700 leading-relaxed">
-            Studies are time-bounded and narrowly scoped to reduce confounding variables and maintain
-            focus on specific research questions.
-          </p>
+          <div className="border-l-4 border-slate-700 pl-6 py-2">
+            <p className="font-bold text-stone-900 mb-2">Standardized Observation Parameters</p>
+            <p className="text-stone-700" style={{ lineHeight: '1.7' }}>
+              Defined tasks, scenarios, or interaction sequences used consistently across participants to
+              enable pattern identification and aggregation.
+            </p>
+          </div>
+
+          <div className="border-l-4 border-slate-700 pl-6 py-2">
+            <p className="font-bold text-stone-900 mb-2">Limited Scope & Duration</p>
+            <p className="text-stone-700" style={{ lineHeight: '1.7' }}>
+              Studies are time-bounded and narrowly scoped to reduce confounding variables and maintain
+              focus on specific research questions.
+            </p>
+          </div>
         </div>
-        <p className="leading-relaxed">
+
+        <p className="text-sm text-stone-600 max-w-4xl" style={{ lineHeight: '1.7' }}>
           Studies are designed to observe user interaction patterns and interface characteristics rather
           than measure outcomes, performance, or behavioral change.
         </p>
@@ -287,32 +365,42 @@ export default function Methodology() {
           interpretation of findings. These limitations are acknowledged explicitly to reduce the risk of
           misuse or over-extrapolation.
         </p>
-        <div className="bg-amber-50 border-l-4 border-amber-600 p-6 mb-6">
-          <p className="font-semibold text-amber-900 mb-4">What SignalPanel research does not measure:</p>
-          <div className="space-y-3 text-stone-800">
-            <p className="leading-relaxed">
-              <span className="font-semibold">Long-term outcomes:</span> Studies observe user interactions
-              during discrete sessions. They do not track sustained behavioral change, long-term user
-              retention, or cumulative effects over time.
-            </p>
-            <p className="leading-relaxed">
-              <span className="font-semibold">Causal relationships:</span> Findings describe observed
-              patterns but do not establish causation. Correlation between interface characteristics and
-              user behavior does not imply that one causes the other.
-            </p>
-            <p className="leading-relaxed">
-              <span className="font-semibold">Population-level prevalence:</span> Studies use purposive
-              sampling and do not produce statistically representative estimates of broader user populations.
-            </p>
-            <p className="leading-relaxed">
-              <span className="font-semibold">Platform performance:</span> Research does not rank, score,
-              or compare platforms. Observations are descriptive and do not constitute endorsements or
-              quality assessments.
-            </p>
-            <p className="leading-relaxed">
-              <span className="font-semibold">Compliance status:</span> Studies observe user experience, not
-              legal or regulatory compliance. Findings should not be interpreted as compliance evaluations.
-            </p>
+        <div className="bg-amber-50 border-l-4 border-amber-600 p-8 mb-8">
+          <div className="flex items-start gap-4 mb-6">
+            <AlertTriangle className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
+            <p className="font-bold text-amber-900 text-lg">What SignalPanel Research Does Not Measure</p>
+          </div>
+          <div className="space-y-4 text-stone-800">
+            <div className="border-l-2 border-amber-300 pl-4">
+              <p className="font-semibold text-amber-900 mb-1">Long-term Outcomes</p>
+              <p style={{ lineHeight: '1.7' }}>
+                Studies observe user interactions during discrete sessions. They do not track sustained behavioral change, long-term user retention, or cumulative effects over time.
+              </p>
+            </div>
+            <div className="border-l-2 border-amber-300 pl-4">
+              <p className="font-semibold text-amber-900 mb-1">Causal Relationships</p>
+              <p style={{ lineHeight: '1.7' }}>
+                Findings describe observed patterns but do not establish causation. Correlation between interface characteristics and user behavior does not imply that one causes the other.
+              </p>
+            </div>
+            <div className="border-l-2 border-amber-300 pl-4">
+              <p className="font-semibold text-amber-900 mb-1">Population-level Prevalence</p>
+              <p style={{ lineHeight: '1.7' }}>
+                Studies use purposive sampling and do not produce statistically representative estimates of broader user populations.
+              </p>
+            </div>
+            <div className="border-l-2 border-amber-300 pl-4">
+              <p className="font-semibold text-amber-900 mb-1">Platform Performance</p>
+              <p style={{ lineHeight: '1.7' }}>
+                Research does not rank, score, or compare platforms. Observations are descriptive and do not constitute endorsements or quality assessments.
+              </p>
+            </div>
+            <div className="border-l-2 border-amber-300 pl-4">
+              <p className="font-semibold text-amber-900 mb-1">Compliance Status</p>
+              <p style={{ lineHeight: '1.7' }}>
+                Studies observe user experience, not legal or regulatory compliance. Findings should not be interpreted as compliance evaluations.
+              </p>
+            </div>
           </div>
         </div>
         <p className="mb-6 leading-relaxed">
@@ -327,71 +415,78 @@ export default function Methodology() {
         </p>
       </section>
 
-      <div className="border-t border-stone-200"></div>
+      <div className="border-t-2 border-stone-200 my-20"></div>
 
-      <section className="max-w-4xl">
-        <h2 className="mb-6">Methodological Boundaries</h2>
-        <p className="mb-6 leading-relaxed">
-          To maintain research independence and methodological integrity, SignalPanel observes strict
-          boundaries regarding the scope and application of research activities.
-        </p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="border-2 border-stone-300 p-6 bg-white">
-            <p className="font-semibold text-stone-900 mb-4">SignalPanel does not:</p>
-            <ul className="space-y-3 text-stone-700">
+      <section className="max-w-5xl mx-auto py-12">
+        <div className="flex items-start gap-6 mb-10">
+          <div className="p-4 bg-slate-100 rounded">
+            <Shield className="w-8 h-8 text-slate-700" />
+          </div>
+          <div>
+            <h2 className="mb-4">Methodological Boundaries</h2>
+            <p className="text-lg text-stone-600 max-w-3xl" style={{ lineHeight: '1.7' }}>
+              Strict boundaries to maintain research independence and methodological integrity
+            </p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="border-3 border-stone-300 p-8 bg-white" style={{ borderWidth: '3px' }}>
+            <p className="font-bold text-stone-900 mb-6 text-lg">SignalPanel Does Not</p>
+            <ul className="space-y-4 text-stone-700">
               <li className="flex items-start gap-3">
-                <span className="text-stone-400 mt-1">•</span>
-                <span>Promote or endorse platforms</span>
+                <span className="text-stone-400 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Promote or endorse platforms</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-stone-400 mt-1">•</span>
-                <span>Rank or score services</span>
+                <span className="text-stone-400 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Rank or score services</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-stone-400 mt-1">•</span>
-                <span>Provide marketing or optimization recommendations</span>
+                <span className="text-stone-400 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Provide marketing or optimization recommendations</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-stone-400 mt-1">•</span>
-                <span>Offer legal or compliance opinions</span>
+                <span className="text-stone-400 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Offer legal or compliance opinions</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-stone-400 mt-1">•</span>
-                <span>Enter commercial partnerships with operators</span>
+                <span className="text-stone-400 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Enter commercial partnerships with operators</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-stone-400 mt-1">•</span>
-                <span>Conduct research funded by industry participants</span>
+                <span className="text-stone-400 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Conduct research funded by industry participants</span>
               </li>
             </ul>
           </div>
 
-          <div className="border-2 border-stone-800 p-6 bg-stone-50">
-            <p className="font-semibold text-stone-900 mb-4">Research outputs are:</p>
-            <ul className="space-y-3 text-stone-700">
+          <div className="border-3 border-slate-700 p-8 bg-slate-50" style={{ borderWidth: '3px' }}>
+            <p className="font-bold text-stone-900 mb-6 text-lg">Research Outputs Are</p>
+            <ul className="space-y-4 text-stone-700">
               <li className="flex items-start gap-3">
-                <span className="text-stone-800 mt-1">•</span>
-                <span>Descriptive and informational</span>
+                <span className="text-slate-700 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Descriptive and informational</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-stone-800 mt-1">•</span>
-                <span>Aggregated to protect participant privacy</span>
+                <span className="text-slate-700 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Aggregated to protect participant privacy</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-stone-800 mt-1">•</span>
-                <span>Neutral in tone and presentation</span>
+                <span className="text-slate-700 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Neutral in tone and presentation</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-stone-800 mt-1">•</span>
-                <span>Limited to observed findings</span>
+                <span className="text-slate-700 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Limited to observed findings</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-stone-800 mt-1">•</span>
-                <span>Transparent about methodological limitations</span>
+                <span className="text-slate-700 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Transparent about methodological limitations</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-stone-800 mt-1">•</span>
-                <span>Published independently of commercial influence</span>
+                <span className="text-slate-700 mt-1">—</span>
+                <span style={{ lineHeight: '1.7' }}>Published independently of commercial influence</span>
               </li>
             </ul>
           </div>
