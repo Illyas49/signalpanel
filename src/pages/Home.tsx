@@ -19,10 +19,10 @@ function AnimatedStat({ value, label, suffix = '' }: { value: number; label: str
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-4xl md:text-5xl font-bold text-slate-700 mb-2">
+      <div className="text-4xl md:text-5xl font-bold text-white mb-2">
         {current}{suffix}
       </div>
-      <div className="text-sm text-stone-600 uppercase tracking-wider font-semibold">{label}</div>
+      <div className="text-sm text-slate-200 uppercase tracking-wider font-semibold">{label}</div>
     </div>
   );
 }
@@ -73,7 +73,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
   return (
     <div>
-      <section className="py-32 md:py-40 -mx-8 md:-mx-16 px-8 md:px-16 bg-gradient-to-b from-white to-[#F6F7F9]">
+      <section className="py-20 md:py-24 -mx-8 md:-mx-16 px-8 md:px-16 bg-gradient-to-b from-white to-[#F6F7F9]">
         <div ref={heroRef.ref} className={`max-w-6xl ${heroRef.isVisible ? 'fade-in-up' : ''}`}>
           <div className="border-l-4 border-slate-700 pl-8 md:pl-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 text-stone-900">
@@ -100,7 +100,7 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section className="py-24 md:py-32 bg-slate-700 -mx-8 md:-mx-16 px-8 md:px-16">
+      <section className="py-16 md:py-20 bg-slate-700 -mx-8 md:-mx-16 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-12 md:gap-16">
             <AnimatedStat value={12} label="Research Areas" />
@@ -110,9 +110,9 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section ref={domainsRef.ref} className={`py-32 md:py-40 section-bg-subtle -mx-8 md:-mx-16 px-8 md:px-16 ${domainsRef.isVisible ? 'fade-in' : ''}`}>
+      <section ref={domainsRef.ref} className={`py-20 md:py-24 section-bg-subtle -mx-8 md:-mx-16 px-8 md:px-16 ${domainsRef.isVisible ? 'fade-in' : ''}`}>
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-stone-900">Core Research Domains</h2>
             <p className="text-lg text-stone-600 max-w-3xl" style={{ lineHeight: '1.7' }}>
               SignalPanel organizes investigation around six foundational areas of user experience in regulated digital environments.
@@ -133,15 +133,15 @@ export default function Home({ onNavigate }: HomeProps) {
                     className="w-full text-left p-8 md:p-10 flex items-start justify-between gap-6"
                   >
                     <div className="flex-1">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className="p-2.5 bg-slate-100 rounded group-hover:bg-slate-700 transition-colors">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="p-2.5 bg-slate-100 rounded group-hover:bg-slate-700 transition-colors flex-shrink-0">
                           <Icon className="w-5 h-5 text-slate-700 group-hover:text-white transition-colors" />
                         </div>
-                        <h3 className="text-lg md:text-xl font-bold text-stone-900 tracking-tight pt-1">
+                        <h3 className="text-lg md:text-xl font-bold text-stone-900 tracking-tight">
                           {pillar.title}
                         </h3>
                       </div>
-                      <p className="text-stone-600 ml-0" style={{ lineHeight: '1.7' }}>
+                      <p className="text-stone-600" style={{ lineHeight: '1.7' }}>
                         {pillar.summary}
                       </p>
                     </div>
@@ -166,53 +166,55 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section className="py-32 md:py-40 section-bg-light">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-stone-900">Methodological Framework</h2>
-            <div className="space-y-6 text-stone-700" style={{ lineHeight: '1.7' }}>
-              <p>
-                SignalPanel operates as an independent research organization focused on the design, execution, and analysis of structured user research in regulated digital environments.
-              </p>
-              <p>
-                Work emphasizes methodological consistency, panel integrity, and aggregated findings rather than individual outcomes or platform-specific performance claims.
-              </p>
-              <p>
-                Research protocols follow standardized observation procedures designed to ensure replicability, minimize bias, and maintain analytical independence from commercial interests.
-              </p>
-            </div>
-          </div>
-
-          <div className="space-y-10">
-            <div className="border-l-4 border-slate-700 pl-8 transition-all hover:pl-10">
-              <h3 className="text-xl font-bold mb-4 text-stone-900">Panel Construction</h3>
-              <p className="text-stone-700" style={{ lineHeight: '1.7' }}>
-                Recruitment and qualification of demographically diverse participant groups following structured selection criteria reflecting user populations across age ranges, experience levels, and jurisdictional contexts.
-              </p>
+      <section className="py-20 md:py-24 section-bg-light -mx-8 md:-mx-16 px-8 md:px-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 md:gap-20 items-start">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-stone-900">Methodological Framework</h2>
+              <div className="space-y-6 text-stone-700" style={{ lineHeight: '1.7' }}>
+                <p>
+                  SignalPanel operates as an independent research organization focused on the design, execution, and analysis of structured user research in regulated digital environments.
+                </p>
+                <p>
+                  Work emphasizes methodological consistency, panel integrity, and aggregated findings rather than individual outcomes or platform-specific performance claims.
+                </p>
+                <p>
+                  Research protocols follow standardized observation procedures designed to ensure replicability, minimize bias, and maintain analytical independence from commercial interests.
+                </p>
+              </div>
             </div>
 
-            <div className="border-l-4 border-slate-700 pl-8 transition-all hover:pl-10">
-              <h3 className="text-xl font-bold mb-4 text-stone-900">Structured Observation</h3>
-              <p className="text-stone-700" style={{ lineHeight: '1.7' }}>
-                Execution of controlled research protocols in which participants interact with specified digital environments under standardized conditions ensuring consistency and methodological integrity.
-              </p>
-            </div>
+            <div className="space-y-10">
+              <div className="border-l-4 border-slate-700 pl-8 transition-all hover:pl-10">
+                <h3 className="text-xl font-bold mb-4 text-stone-900">Panel Construction</h3>
+                <p className="text-stone-700" style={{ lineHeight: '1.7' }}>
+                  Recruitment and qualification of demographically diverse participant groups following structured selection criteria reflecting user populations across age ranges, experience levels, and jurisdictional contexts.
+                </p>
+              </div>
 
-            <div className="border-l-4 border-slate-700 pl-8 transition-all hover:pl-10">
-              <h3 className="text-xl font-bold mb-4 text-stone-900">Aggregated Analysis</h3>
-              <p className="text-stone-700" style={{ lineHeight: '1.7' }}>
-                Synthesis of behavioral data, interaction patterns, and qualitative findings into aggregated reports focusing on systemic observations rather than individual outcomes.
-              </p>
+              <div className="border-l-4 border-slate-700 pl-8 transition-all hover:pl-10">
+                <h3 className="text-xl font-bold mb-4 text-stone-900">Structured Observation</h3>
+                <p className="text-stone-700" style={{ lineHeight: '1.7' }}>
+                  Execution of controlled research protocols in which participants interact with specified digital environments under standardized conditions ensuring consistency and methodological integrity.
+                </p>
+              </div>
+
+              <div className="border-l-4 border-slate-700 pl-8 transition-all hover:pl-10">
+                <h3 className="text-xl font-bold mb-4 text-stone-900">Aggregated Analysis</h3>
+                <p className="text-stone-700" style={{ lineHeight: '1.7' }}>
+                  Synthesis of behavioral data, interaction patterns, and qualitative findings into aggregated reports focusing on systemic observations rather than individual outcomes.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-32 md:py-40 border-t-2 border-stone-200">
-        <div className="max-w-3xl mx-auto">
+      <section className="py-20 md:py-24 -mx-8 md:-mx-16 px-8 md:px-16">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-stone-900">Research Scope & Boundaries</h2>
 
-          <div className="space-y-12">
+          <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-sm uppercase tracking-wider text-stone-500 mb-6 font-semibold">Organizational Activities</h3>
               <div className="space-y-4 text-stone-700" style={{ lineHeight: '1.7' }}>
@@ -239,7 +241,7 @@ export default function Home({ onNavigate }: HomeProps) {
               </div>
             </div>
 
-            <div className="pt-8 border-t border-stone-200">
+            <div>
               <h3 className="text-sm uppercase tracking-wider text-stone-500 mb-6 font-semibold">Excluded Activities</h3>
               <div className="space-y-4 text-stone-600" style={{ lineHeight: '1.7' }}>
                 <p className="flex items-start gap-4">
@@ -264,34 +266,6 @@ export default function Home({ onNavigate }: HomeProps) {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 border-t border-stone-200 section-bg-subtle -mx-8 md:-mx-16 px-8 md:px-16">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-stone-600 mb-8" style={{ lineHeight: '1.7' }}>
-            Additional information on research methodology, panel composition, and study archives is accessible through organizational documentation.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <button
-              onClick={() => onNavigate('Methodology')}
-              className="px-5 py-2.5 border-2 border-slate-700 bg-white text-slate-700 hover:bg-slate-700 hover:text-white transition-all text-sm font-semibold tracking-wide uppercase"
-            >
-              Methodology
-            </button>
-            <button
-              onClick={() => onNavigate('Research Areas')}
-              className="px-5 py-2.5 border-2 border-slate-700 bg-white text-slate-700 hover:bg-slate-700 hover:text-white transition-all text-sm font-semibold tracking-wide uppercase"
-            >
-              Research Areas
-            </button>
-            <button
-              onClick={() => onNavigate('About')}
-              className="px-5 py-2.5 border-2 border-stone-300 bg-white text-stone-700 hover:border-slate-700 hover:text-stone-900 transition-all text-sm font-semibold tracking-wide uppercase"
-            >
-              About
-            </button>
           </div>
         </div>
       </section>
