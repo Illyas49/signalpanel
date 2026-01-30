@@ -6,6 +6,19 @@ import Methodology from './pages/Methodology';
 import PanelsStudies from './pages/PanelsStudies';
 import About from './pages/About';
 import Access from './pages/Access';
+import ResearchAreas from './pages/ResearchAreas';
+import OnboardingEntryFlows from './pages/research-areas/OnboardingEntryFlows';
+import InformationArchitecture from './pages/research-areas/InformationArchitecture';
+import ControlDiscoverability from './pages/research-areas/ControlDiscoverability';
+import CommunicationClarity from './pages/research-areas/CommunicationClarity';
+import JurisdictionalContext from './pages/research-areas/JurisdictionalContext';
+import ConsentDisclosureSurfaces from './pages/research-areas/ConsentDisclosureSurfaces';
+import ErrorStatesRecovery from './pages/research-areas/ErrorStatesRecovery';
+import NavigationWayfinding from './pages/research-areas/NavigationWayfinding';
+import AccountSettingsSelfManagement from './pages/research-areas/AccountSettingsSelfManagement';
+import TrustSignalsUserConfidence from './pages/research-areas/TrustSignalsUserConfidence';
+import DeviceEnvironmentVariance from './pages/research-areas/DeviceEnvironmentVariance';
+import CrossSessionContinuity from './pages/research-areas/CrossSessionContinuity';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -16,12 +29,38 @@ function App() {
         return <Home onNavigate={setCurrentPage} />;
       case 'Methodology':
         return <Methodology />;
+      case 'Research Areas':
+        return <ResearchAreas onNavigate={setCurrentPage} />;
       case 'Panels & Studies':
         return <PanelsStudies onNavigate={setCurrentPage} />;
       case 'About':
         return <About />;
       case 'Access':
         return <Access onNavigate={setCurrentPage} />;
+      case 'onboarding-entry-flows':
+        return <OnboardingEntryFlows />;
+      case 'information-architecture':
+        return <InformationArchitecture />;
+      case 'control-discoverability':
+        return <ControlDiscoverability />;
+      case 'communication-clarity':
+        return <CommunicationClarity />;
+      case 'jurisdictional-context':
+        return <JurisdictionalContext />;
+      case 'consent-disclosure-surfaces':
+        return <ConsentDisclosureSurfaces />;
+      case 'error-states-recovery':
+        return <ErrorStatesRecovery />;
+      case 'navigation-wayfinding':
+        return <NavigationWayfinding />;
+      case 'account-settings-self-management':
+        return <AccountSettingsSelfManagement />;
+      case 'trust-signals-user-confidence':
+        return <TrustSignalsUserConfidence />;
+      case 'device-environment-variance':
+        return <DeviceEnvironmentVariance />;
+      case 'cross-session-continuity':
+        return <CrossSessionContinuity />;
       default:
         return <Home onNavigate={setCurrentPage} />;
     }
