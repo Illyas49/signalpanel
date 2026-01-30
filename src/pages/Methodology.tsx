@@ -3,8 +3,8 @@ import { Users, Target, CheckCircle, BarChart3, Shield, AlertTriangle } from 'lu
 export default function Methodology() {
   return (
     <div>
-      <section className="py-16 md:py-20 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-8 md:-mx-16 px-8 md:px-16">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-10 md:py-12 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-8 md:-mx-16 px-8 md:px-16">
+        <div className="max-w-7xl mx-auto">
           <h1 className="mb-6">Methodology</h1>
           <div className="h-1 w-24 bg-slate-700 mb-8"></div>
           <p className="text-xl text-stone-600 max-w-3xl" style={{ lineHeight: '1.7' }}>
@@ -13,7 +13,7 @@ export default function Methodology() {
         </div>
       </section>
 
-      <section className="py-20 max-w-5xl mx-auto">
+      <section className="py-12 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="flex items-start gap-4">
             <div className="p-3 bg-slate-100 rounded flex-shrink-0">
@@ -69,9 +69,9 @@ export default function Methodology() {
         </div>
       </section>
 
-      <div className="border-t-2 border-stone-200 my-20"></div>
+      <div className="border-t-2 border-stone-200 my-10"></div>
 
-      <section className="max-w-5xl mx-auto py-12">
+      <section className="max-w-7xl mx-auto py-12">
         <div className="flex items-start gap-6 mb-10">
           <div className="p-4 bg-slate-100 rounded">
             <Users className="w-8 h-8 text-slate-700" />
@@ -122,9 +122,9 @@ export default function Methodology() {
         </p>
       </section>
 
-      <div className="border-t-2 border-stone-200 my-20"></div>
+      <div className="border-t-2 border-stone-200 my-10"></div>
 
-      <section className="max-w-5xl mx-auto py-12">
+      <section className="max-w-7xl mx-auto py-12">
         <div className="flex items-start gap-6 mb-10">
           <div className="p-4 bg-slate-100 rounded">
             <Target className="w-8 h-8 text-slate-700" />
@@ -415,9 +415,9 @@ export default function Methodology() {
         </p>
       </section>
 
-      <div className="border-t-2 border-stone-200 my-20"></div>
+      <div className="border-t-2 border-stone-200 my-10"></div>
 
-      <section className="max-w-5xl mx-auto py-12">
+      <section className="max-w-7xl mx-auto py-12">
         <div className="flex items-start gap-6 mb-10">
           <div className="p-4 bg-slate-100 rounded">
             <Shield className="w-8 h-8 text-slate-700" />

@@ -73,45 +73,54 @@ export default function Home({ onNavigate }: HomeProps) {
 
   return (
     <div>
-      <section className="py-20 md:py-24 -mx-8 md:-mx-16 px-8 md:px-16 bg-gradient-to-b from-white to-[#F6F7F9]">
-        <div ref={heroRef.ref} className={`max-w-6xl ${heroRef.isVisible ? 'fade-in-up' : ''}`}>
-          <div className="border-l-4 border-slate-700 pl-8 md:pl-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 text-stone-900">
-              Structured research on user experience in age-restricted digital environments
-            </h1>
-            <p className="text-xl md:text-2xl text-stone-600 mb-10 max-w-4xl" style={{ lineHeight: '1.6' }}>
-              SignalPanel conducts panel-based research to document how users interact with regulated digital platforms across jurisdictions.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button
-                onClick={() => onNavigate('Methodology')}
-                className="px-6 py-3 bg-slate-700 text-white hover:bg-slate-800 transition-all text-sm font-semibold tracking-wide uppercase shadow-sm hover:shadow-md"
-              >
-                View Methodology
-              </button>
-              <button
-                onClick={() => onNavigate('Research Areas')}
-                className="px-6 py-3 border-2 border-slate-700 text-slate-700 hover:bg-slate-700 hover:text-white transition-all text-sm font-semibold tracking-wide uppercase"
-              >
-                Explore Research Areas
-              </button>
+      <section className="py-12 md:py-16 -mx-8 md:-mx-16 px-8 md:px-16 bg-gradient-to-b from-white to-[#F6F7F9]">
+        <div ref={heroRef.ref} className={`max-w-7xl mx-auto ${heroRef.isVisible ? 'fade-in-up' : ''}`}>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="border-l-4 border-slate-700 pl-8 md:pl-12">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 text-stone-900">
+                Structured research on user experience in age-restricted digital environments
+              </h1>
+              <p className="text-xl md:text-2xl text-stone-600 mb-10" style={{ lineHeight: '1.6' }}>
+                SignalPanel conducts panel-based research to document how users interact with regulated digital platforms across jurisdictions.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <button
+                  onClick={() => onNavigate('Methodology')}
+                  className="px-6 py-3 bg-slate-700 text-white hover:bg-slate-800 transition-all text-sm font-semibold tracking-wide uppercase shadow-sm hover:shadow-md"
+                >
+                  View Methodology
+                </button>
+                <button
+                  onClick={() => onNavigate('Research Areas')}
+                  className="px-6 py-3 border-2 border-slate-700 text-slate-700 hover:bg-slate-700 hover:text-white transition-all text-sm font-semibold tracking-wide uppercase"
+                >
+                  Explore Research Areas
+                </button>
+              </div>
+            </div>
+            <div className="hidden md:block">
+              <img
+                src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Research and data analysis"
+                className="w-full h-[400px] object-cover rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-slate-700 -mx-8 md:-mx-16 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-10 md:py-12 bg-slate-700 -mx-8 md:-mx-16 px-8 md:px-16">
+        <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-12 md:gap-16">
             <AnimatedStat value={12} label="Research Areas" />
             <AnimatedStat value={8} label="Jurisdictions" />
-            <AnimatedStat value={450} label="Participants" suffix="+" />
+            <AnimatedStat value={100000} label="Participants" suffix="+" />
           </div>
         </div>
       </section>
 
-      <section ref={domainsRef.ref} className={`py-20 md:py-24 section-bg-subtle -mx-8 md:-mx-16 px-8 md:px-16 ${domainsRef.isVisible ? 'fade-in' : ''}`}>
-        <div className="max-w-6xl mx-auto">
+      <section ref={domainsRef.ref} className={`py-12 md:py-16 section-bg-subtle -mx-8 md:-mx-16 px-8 md:px-16 ${domainsRef.isVisible ? 'fade-in' : ''}`}>
+        <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-stone-900">Core Research Domains</h2>
             <p className="text-lg text-stone-600 max-w-3xl" style={{ lineHeight: '1.7' }}>
@@ -166,8 +175,8 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 section-bg-light -mx-8 md:-mx-16 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-12 md:py-16 section-bg-light -mx-8 md:-mx-16 px-8 md:px-16">
+        <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 md:gap-20 items-start">
             <div>
               <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-stone-900">Methodological Framework</h2>
@@ -210,8 +219,8 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 -mx-8 md:-mx-16 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-12 md:py-16 -mx-8 md:-mx-16 px-8 md:px-16">
+        <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-stone-900">Research Scope & Boundaries</h2>
 
           <div className="grid md:grid-cols-2 gap-12">

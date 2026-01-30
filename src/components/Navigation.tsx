@@ -8,7 +8,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
   return (
     <nav className="border-b border-stone-300 bg-stone-50">
-      <div className="max-w-5xl mx-auto px-8 py-6">
+      <div className="max-w-7xl mx-auto px-8 py-6">
         <div className="flex items-center justify-between">
           <button
             onClick={() => onNavigate('Home')}

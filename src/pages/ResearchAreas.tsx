@@ -82,8 +82,8 @@ export default function ResearchAreas({ onNavigate }: ResearchAreasProps) {
 
   return (
     <div>
-      <section className="py-16 md:py-20 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-8 md:-mx-16 px-8 md:px-16">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-16 md:py-12 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-8 md:-mx-16 px-8 md:px-16">
+        <div className="max-w-7xl mx-auto">
           <h1 className="mb-6">Research Areas</h1>
           <div className="h-1 w-24 bg-slate-700 mb-8"></div>
           <p className="text-xl text-stone-600 max-w-3xl" style={{ lineHeight: '1.7' }}>
@@ -92,7 +92,7 @@ export default function ResearchAreas({ onNavigate }: ResearchAreasProps) {
         </div>
       </section>
 
-      <section className="py-20 max-w-5xl mx-auto">
+      <section className="py-12 max-w-7xl mx-auto">
         <div className="space-y-6 mb-16">
           <p className="text-lg" style={{ lineHeight: '1.7' }}>
             User experience in regulated digital environments is multidimensional. Interface design,
@@ -118,8 +118,8 @@ export default function ResearchAreas({ onNavigate }: ResearchAreasProps) {
         </div>
       </section>
 
-      <section className="py-20 bg-[#EEF1F5] -mx-8 md:-mx-16 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-12 bg-[#EEF1F5] -mx-8 md:-mx-16 px-8 md:px-16">
+        <div className="max-w-7xl mx-auto">
           <h2 className="mb-4">Active Research Areas</h2>
           <p className="text-stone-700 mb-12 max-w-3xl" style={{ lineHeight: '1.7' }}>
             SignalPanel currently conducts research across twelve distinct areas. Each area page includes
@@ -157,7 +157,7 @@ export default function ResearchAreas({ onNavigate }: ResearchAreasProps) {
         </div>
       </section>
 
-      <section className="py-16 max-w-5xl mx-auto">
+      <section className="py-16 max-w-7xl mx-auto">
         <p className="text-stone-600" style={{ lineHeight: '1.7' }}>
           Research area focus may expand or contract based on evolving regulatory frameworks, technological
           changes, or emerging patterns in digital environment design. Study archives and methodological
