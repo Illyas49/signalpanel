@@ -73,7 +73,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
   return (
     <div>
-      <section className="py-12 md:py-16 -mx-8 md:-mx-16 px-8 md:px-16 bg-gradient-to-b from-white to-[#F6F7F9]">
+      <section className="py-12 md:py-16 -mx-4 md:-mx-8 px-4 md:px-8 bg-gradient-to-b from-white to-[#F6F7F9]">
         <div ref={heroRef.ref} className={`max-w-7xl mx-auto ${heroRef.isVisible ? 'fade-in-up' : ''}`}>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="border-l-4 border-slate-700 pl-8 md:pl-12">
@@ -109,7 +109,7 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section className="py-10 md:py-12 bg-slate-700 -mx-8 md:-mx-16 px-8 md:px-16">
+      <section className="py-10 md:py-12 bg-slate-700 -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-12 md:gap-16">
             <AnimatedStat value={12} label="Research Areas" />
@@ -119,7 +119,7 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section ref={domainsRef.ref} className={`py-12 md:py-16 section-bg-subtle -mx-8 md:-mx-16 px-8 md:px-16 ${domainsRef.isVisible ? 'fade-in' : ''}`}>
+      <section ref={domainsRef.ref} className={`py-12 md:py-16 section-bg-subtle -mx-4 md:-mx-8 px-4 md:px-8 ${domainsRef.isVisible ? 'fade-in' : ''}`}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-stone-900">Core Research Domains</h2>
@@ -175,7 +175,7 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 section-bg-light -mx-8 md:-mx-16 px-8 md:px-16">
+      <section className="py-12 md:py-16 section-bg-light -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 md:gap-20 items-start">
             <div>
@@ -219,7 +219,7 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 -mx-8 md:-mx-16 px-8 md:px-16">
+      <section className="py-12 md:py-16 -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-stone-900">Research Scope & Boundaries</h2>
 

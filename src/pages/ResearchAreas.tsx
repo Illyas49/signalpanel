@@ -82,7 +82,7 @@ export default function ResearchAreas({ onNavigate }: ResearchAreasProps) {
 
   return (
     <div>
-      <section className="py-16 md:py-12 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-8 md:-mx-16 px-8 md:px-16">
+      <section className="py-16 md:py-12 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="mb-6">Research Areas</h1>
           <div className="h-1 w-24 bg-slate-700 mb-8"></div>
@@ -118,7 +118,7 @@ export default function ResearchAreas({ onNavigate }: ResearchAreasProps) {
         </div>
       </section>
 
-      <section className="py-12 bg-[#EEF1F5] -mx-8 md:-mx-16 px-8 md:px-16">
+      <section className="py-12 bg-[#EEF1F5] -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="mb-4">Active Research Areas</h2>
           <p className="text-stone-700 mb-12 max-w-3xl" style={{ lineHeight: '1.7' }}>

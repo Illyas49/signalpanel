@@ -3,7 +3,7 @@ import { FileText, BookOpen, Type, AlignLeft, AlertTriangle, CheckCircle } from 
 export default function CommunicationClarity() {
   return (
     <div>
-      <section className="py-16 md:py-20 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-8 md:-mx-16 px-8 md:px-16">
+      <section className="py-16 md:py-20 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-start gap-6 mb-8">
             <div className="p-4 bg-slate-100 rounded">
@@ -47,7 +47,7 @@ export default function CommunicationClarity() {
         </div>
       </section>
 
-      <section className="py-20 bg-[#EEF1F5] -mx-8 md:-mx-16 px-8 md:px-16">
+      <section className="py-20 bg-[#EEF1F5] -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="mb-12">Key Dimensions</h2>
 

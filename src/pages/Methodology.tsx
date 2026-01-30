@@ -3,7 +3,7 @@ import { Users, Target, CheckCircle, BarChart3, Shield, AlertTriangle } from 'lu
 export default function Methodology() {
   return (
     <div>
-      <section className="py-10 md:py-12 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-8 md:-mx-16 px-8 md:px-16">
+      <section className="py-10 md:py-12 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="mb-6">Methodology</h1>
           <div className="h-1 w-24 bg-slate-700 mb-8"></div>

@@ -71,7 +71,7 @@ function App() {
       <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
 
       <main className="flex-grow">
-        <div className="max-w-7xl mx-auto px-8 py-10 md:py-12">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-12">
           {renderPage()}
         </div>
       </main>
