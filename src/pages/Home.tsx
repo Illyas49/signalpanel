@@ -2,6 +2,17 @@ import { useState, useEffect } from 'react';
 import { ArrowRight, Users, Globe, FileText, Database, Shield, Layout } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useAnimatedNumber } from '../hooks/useAnimatedNumber';
+import Hero from '../components/layout/Hero';
+import Section from '../components/layout/Section';
+import ContentColumn from '../components/layout/ContentColumn';
+import Card from '../components/content/Card';
+import MetricCard from '../components/content/MetricCard';
+import InsightBlock from '../components/content/InsightBlock';
+import Heading from '../components/typography/Heading';
+import Text from '../components/typography/Text';
+import Badge from '../components/typography/Badge';
+import AnalysisSection from '../components/specialized/AnalysisSection';
+import FinalTakeaway from '../components/specialized/FinalTakeaway';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -73,64 +84,53 @@ export default function Home({ onNavigate }: HomeProps) {
 
   return (
     <div>
-      <section className="py-20 md:py-32 -mx-4 md:-mx-8 px-4 md:px-8 relative overflow-hidden rounded-3xl">
-        <div className="absolute inset-0 z-0 rounded-3xl overflow-hidden">
-          <img
-            src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="Research background"
-            className="w-full h-full object-cover"
-            style={{ filter: 'blur(8px)' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-700/85 to-cyan-900/90"></div>
-        </div>
-        <div ref={heroRef.ref} className={`max-w-5xl mx-auto relative z-10 ${heroRef.isVisible ? 'fade-in-up' : ''}`}>
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-10 text-white tracking-tight drop-shadow-sm">
-              Structured Research on User Experience in <span className="font-normal">Age-Restricted Digital Environments</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-cyan-50 max-w-3xl mx-auto mb-12 drop-shadow-sm" style={{ lineHeight: '1.65' }}>
-              SignalPanel conducts panel-based research to document how users interact with regulated digital platforms across jurisdictions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button
-                onClick={() => onNavigate('Methodology')}
-                className="group px-8 py-4 bg-white text-cyan-800 hover:bg-cyan-50 transition-all text-sm font-medium tracking-wide flex items-center gap-2 shadow-lg"
-              >
-                View Methodology
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => onNavigate('Research Areas')}
-                className="px-8 py-4 text-white hover:text-cyan-100 transition-all text-sm font-medium tracking-wide border-b-2 border-white/50 hover:border-white"
-              >
-                Explore Research Areas
-              </button>
-            </div>
+      <Hero
+        imageUrl="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=1920"
+        imageAlt="Research background"
+        overlay="medium"
+        height="md"
+        rounded={true}
+      >
+        <div ref={heroRef.ref} className={`text-center ${heroRef.isVisible ? 'fade-in-up' : ''}`}>
+          <Heading level={1} align="center" className="mb-10 text-white drop-shadow-sm">
+            Structured Research on User Experience in <span className="font-normal">Age-Restricted Digital Environments</span>
+          </Heading>
+          <Text size="xl" variant="light" className="max-w-3xl mx-auto mb-12 drop-shadow-sm">
+            SignalPanel conducts panel-based research to document how users interact with regulated digital platforms across jurisdictions.
+          </Text>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button
+              onClick={() => onNavigate('Methodology')}
+              className="group px-8 py-4 bg-white text-cyan-800 hover:bg-cyan-50 transition-all text-sm font-medium tracking-wide flex items-center gap-2 shadow-lg"
+            >
+              View Methodology
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button
+              onClick={() => onNavigate('Research Areas')}
+              className="px-8 py-4 text-white hover:text-cyan-100 transition-all text-sm font-medium tracking-wide border-b-2 border-white/50 hover:border-white"
+            >
+              Explore Research Areas
+            </button>
           </div>
         </div>
-      </section>
+      </Hero>
 
-      <section className="py-20 md:py-24 bg-gradient-to-br from-cyan-700 to-cyan-900 -mx-4 md:-mx-8 px-4 md:px-8 mt-16 md:mt-24">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-16 md:gap-20">
-            <AnimatedStat value={12} label="Research Areas" />
-            <AnimatedStat value={8} label="Jurisdictions" />
-            <AnimatedStat value={100000} label="Participants" suffix="+" />
-          </div>
+      <Section background="gradient" spacing="lg" className="mt-16 md:mt-24">
+        <div className="grid md:grid-cols-3 gap-16 md:gap-20">
+          <AnimatedStat value={12} label="Research Areas" />
+          <AnimatedStat value={8} label="Jurisdictions" />
+          <AnimatedStat value={100000} label="Participants" suffix="+" />
         </div>
-      </section>
+      </Section>
 
-      <section ref={domainsRef.ref} className={`py-20 md:py-24 bg-white -mx-4 md:-mx-8 px-4 md:px-8 ${domainsRef.isVisible ? 'fade-in' : ''}`}>
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-16 text-center">
-            <div className="inline-block px-4 py-1 bg-cyan-100 text-cyan-800 text-xs uppercase tracking-widest font-medium mb-6 rounded-full">
-              Research Domains
-            </div>
-            <h2 className="text-3xl md:text-4xl font-light mb-6 text-stone-900 tracking-tight">Core Research Domains</h2>
-            <p className="text-lg text-stone-600 max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
+      <Section ref={domainsRef.ref} background="white" spacing="lg" className={domainsRef.isVisible ? 'fade-in' : ''}>
+        <AnalysisSection badge="Research Domains" title="Core Research Domains">
+          <ContentColumn width="medium" className="text-center mb-12">
+            <Text size="lg" variant="muted">
               SignalPanel organizes investigation around six foundational areas of user experience in regulated digital environments.
-            </p>
-          </div>
+            </Text>
+          </ContentColumn>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {researchPillars.map((pillar, index) => {
@@ -141,124 +141,107 @@ export default function Home({ onNavigate }: HomeProps) {
                   className="group cursor-pointer"
                   onClick={() => setExpandedPillar(expandedPillar === index ? null : index)}
                 >
-                  <div className="p-8 bg-white border border-stone-200 hover:border-cyan-600 transition-all hover:shadow-md">
+                  <Card variant="default" padding="md" className="hover:border-cyan-600 transition-all hover:shadow-md h-full">
                     <div className="mb-5 p-2.5 bg-cyan-50 inline-flex rounded group-hover:bg-cyan-100 transition-colors">
                       <Icon className="w-6 h-6 text-cyan-700" />
                     </div>
-                    <h3 className="text-xl font-normal text-stone-900 mb-4 tracking-tight leading-snug">
+                    <Heading level={3} className="mb-4">
                       {pillar.title}
-                    </h3>
-                    <p className="text-stone-600 text-sm leading-relaxed">
+                    </Heading>
+                    <Text size="sm" variant="muted">
                       {pillar.summary}
-                    </p>
+                    </Text>
                     {expandedPillar === index && (
-                      <p className="text-stone-600 text-sm leading-relaxed mt-4 pt-4 border-t border-cyan-100">
-                        {pillar.detail}
-                      </p>
+                      <div className="mt-4 pt-4 border-t border-cyan-100">
+                        <Text size="sm" variant="muted">
+                          {pillar.detail}
+                        </Text>
+                      </div>
                     )}
-                  </div>
+                  </Card>
                 </div>
               );
             })}
           </div>
-        </div>
-      </section>
+        </AnalysisSection>
+      </Section>
 
-      <section className="py-20 md:py-24 bg-stone-50 -mx-4 md:-mx-8 px-4 md:px-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-1 bg-cyan-100 text-cyan-800 text-xs uppercase tracking-widest font-medium mb-6 rounded-full">
-              Methodology
-            </div>
-            <h2 className="text-3xl md:text-4xl font-light mb-6 text-stone-900 tracking-tight">Methodological Framework</h2>
-          </div>
-
+      <Section background="gray" spacing="lg">
+        <AnalysisSection badge="Methodology" title="Methodological Framework">
           <div className="grid md:grid-cols-3 gap-12 mb-16">
-            <div className="text-center p-8 bg-white border border-stone-200 rounded-lg">
+            <Card variant="default" padding="md" className="text-center">
               <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="w-3 h-3 bg-cyan-600 rounded-full"></div>
               </div>
-              <h3 className="text-lg font-medium mb-4 text-stone-900">Panel Construction</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
+              <Heading level={3} align="center" className="mb-4">Panel Construction</Heading>
+              <Text size="sm" variant="muted">
                 Recruitment and qualification of demographically diverse participant groups following structured selection criteria.
-              </p>
-            </div>
+              </Text>
+            </Card>
 
-            <div className="text-center p-8 bg-white border border-stone-200 rounded-lg">
+            <Card variant="default" padding="md" className="text-center">
               <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="w-3 h-3 bg-cyan-600 rounded-full"></div>
               </div>
-              <h3 className="text-lg font-medium mb-4 text-stone-900">Structured Observation</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
+              <Heading level={3} align="center" className="mb-4">Structured Observation</Heading>
+              <Text size="sm" variant="muted">
                 Execution of controlled research protocols ensuring consistency and methodological integrity.
-              </p>
-            </div>
+              </Text>
+            </Card>
 
-            <div className="text-center p-8 bg-white border border-stone-200 rounded-lg">
+            <Card variant="default" padding="md" className="text-center">
               <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="w-3 h-3 bg-cyan-600 rounded-full"></div>
               </div>
-              <h3 className="text-lg font-medium mb-4 text-stone-900">Aggregated Analysis</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
+              <Heading level={3} align="center" className="mb-4">Aggregated Analysis</Heading>
+              <Text size="sm" variant="muted">
                 Synthesis of behavioral data into aggregated reports focusing on systemic observations.
+              </Text>
+            </Card>
+          </div>
+
+          <ContentColumn width="medium">
+            <InsightBlock variant="highlight">
+              <p>
+                SignalPanel operates as an independent research organization focused on the design, execution, and analysis of structured user research in regulated digital environments.
               </p>
-            </div>
-          </div>
+              <p>
+                Work emphasizes methodological consistency, panel integrity, and aggregated findings rather than individual outcomes or platform-specific performance claims.
+              </p>
+            </InsightBlock>
+          </ContentColumn>
+        </AnalysisSection>
+      </Section>
 
-          <div className="max-w-3xl mx-auto">
-            <div className="p-10 bg-gradient-to-br from-cyan-50 to-cyan-100 border-l-4 border-cyan-600">
-              <div className="space-y-6 text-stone-700 text-center" style={{ lineHeight: '1.8' }}>
-                <p>
-                  SignalPanel operates as an independent research organization focused on the design, execution, and analysis of structured user research in regulated digital environments.
-                </p>
-                <p>
-                  Work emphasizes methodological consistency, panel integrity, and aggregated findings rather than individual outcomes or platform-specific performance claims.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-24 bg-white border-t border-stone-200 -mx-4 md:-mx-8 px-4 md:px-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-1 bg-cyan-100 text-cyan-800 text-xs uppercase tracking-widest font-medium mb-6 rounded-full">
-              Scope
-            </div>
-            <h2 className="text-3xl md:text-4xl font-light mb-6 text-stone-900 tracking-tight">Research Scope & Boundaries</h2>
-          </div>
-
+      <Section background="white" spacing="lg" className="border-t border-stone-200">
+        <AnalysisSection badge="Scope" title="Research Scope & Boundaries">
           <div className="grid md:grid-cols-2 gap-16">
-            <div className="p-8 bg-cyan-50 border-l-4 border-cyan-600">
-              <h3 className="text-xs uppercase tracking-widest text-cyan-800 mb-8 font-medium">Organizational Activities</h3>
-              <div className="space-y-5 text-stone-700 text-sm" style={{ lineHeight: '1.8' }}>
-                <p className="flex items-start gap-3">
-                  <span className="text-cyan-600 mt-1 font-light">—</span>
-                  <span>Conduct structured, independent research on user experience in regulated digital environments</span>
-                </p>
-                <p className="flex items-start gap-3">
-                  <span className="text-cyan-600 mt-1 font-light">—</span>
-                  <span>Observe and document user interaction patterns across diverse participant populations</span>
-                </p>
-                <p className="flex items-start gap-3">
-                  <span className="text-cyan-600 mt-1 font-light">—</span>
-                  <span>Report findings at an aggregated level without identifying individual users or platforms</span>
-                </p>
-                <p className="flex items-start gap-3">
-                  <span className="text-cyan-600 mt-1 font-light">—</span>
-                  <span>Maintain methodological transparency through published research protocols</span>
-                </p>
-                <p className="flex items-start gap-3">
-                  <span className="text-cyan-600 mt-1 font-light">—</span>
-                  <span>Document jurisdictional variations in user experience and interface implementation</span>
-                </p>
-              </div>
-            </div>
+            <InsightBlock title="Organizational Activities" variant="default">
+              <p className="flex items-start gap-3">
+                <span className="text-cyan-600 mt-1 font-light">—</span>
+                <span>Conduct structured, independent research on user experience in regulated digital environments</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <span className="text-cyan-600 mt-1 font-light">—</span>
+                <span>Observe and document user interaction patterns across diverse participant populations</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <span className="text-cyan-600 mt-1 font-light">—</span>
+                <span>Report findings at an aggregated level without identifying individual users or platforms</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <span className="text-cyan-600 mt-1 font-light">—</span>
+                <span>Maintain methodological transparency through published research protocols</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <span className="text-cyan-600 mt-1 font-light">—</span>
+                <span>Document jurisdictional variations in user experience and interface implementation</span>
+              </p>
+            </InsightBlock>
 
-            <div className="p-8 bg-stone-50 border-l-4 border-stone-300">
-              <h3 className="text-xs uppercase tracking-widest text-stone-500 mb-8 font-medium">Excluded Activities</h3>
-              <div className="space-y-5 text-stone-500 text-sm" style={{ lineHeight: '1.8' }}>
+            <div className="p-8 bg-stone-50 border-l-4 border-stone-300 rounded-r-lg">
+              <h3 className="text-xs uppercase tracking-widest text-stone-500 mb-6 font-medium">Excluded Activities</h3>
+              <div className="space-y-4 text-stone-500 text-sm" style={{ lineHeight: '1.8' }}>
                 <p className="flex items-start gap-3">
                   <span className="text-stone-300 mt-1 font-light">—</span>
                   <span>Platform promotion, endorsement, or ranking services</span>
@@ -282,8 +265,8 @@ export default function Home({ onNavigate }: HomeProps) {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </AnalysisSection>
+      </Section>
     </div>
   );
 }
