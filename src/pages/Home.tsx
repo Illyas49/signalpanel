@@ -73,26 +73,35 @@ export default function Home({ onNavigate }: HomeProps) {
 
   return (
     <div>
-      <section className="py-20 md:py-32 -mx-4 md:-mx-8 px-4 md:px-8 bg-white">
-        <div ref={heroRef.ref} className={`max-w-5xl mx-auto ${heroRef.isVisible ? 'fade-in-up' : ''}`}>
+      <section className="py-20 md:py-32 -mx-4 md:-mx-8 px-4 md:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Research background"
+            className="w-full h-full object-cover"
+            style={{ filter: 'blur(8px)' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-700/85 to-cyan-900/90"></div>
+        </div>
+        <div ref={heroRef.ref} className={`max-w-5xl mx-auto relative z-10 ${heroRef.isVisible ? 'fade-in-up' : ''}`}>
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-10 text-stone-900 tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-10 text-white tracking-tight drop-shadow-sm">
               Structured Research on User Experience in <span className="font-normal">Age-Restricted Digital Environments</span>
             </h1>
-            <p className="text-xl md:text-2xl text-stone-600 max-w-3xl mx-auto mb-12" style={{ lineHeight: '1.65' }}>
+            <p className="text-xl md:text-2xl text-cyan-50 max-w-3xl mx-auto mb-12 drop-shadow-sm" style={{ lineHeight: '1.65' }}>
               SignalPanel conducts panel-based research to document how users interact with regulated digital platforms across jurisdictions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
                 onClick={() => onNavigate('Methodology')}
-                className="group px-8 py-4 bg-cyan-700 text-white hover:bg-cyan-800 transition-all text-sm font-medium tracking-wide flex items-center gap-2"
+                className="group px-8 py-4 bg-white text-cyan-800 hover:bg-cyan-50 transition-all text-sm font-medium tracking-wide flex items-center gap-2 shadow-lg"
               >
                 View Methodology
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => onNavigate('Research Areas')}
-                className="px-8 py-4 text-stone-700 hover:text-cyan-700 transition-all text-sm font-medium tracking-wide border-b-2 border-transparent hover:border-cyan-700"
+                className="px-8 py-4 text-white hover:text-cyan-100 transition-all text-sm font-medium tracking-wide border-b-2 border-white/50 hover:border-white"
               >
                 Explore Research Areas
               </button>
