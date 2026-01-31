@@ -82,15 +82,15 @@
   }
 
   .accent-color {
-    @apply text-stone-800;
+    @apply text-cyan-700;
   }
 
   .accent-bg {
-    @apply bg-stone-800;
+    @apply bg-cyan-700;
   }
 
   .accent-border {
-    @apply border-stone-800;
+    @apply border-cyan-700;
   }
 
   .section-bg-light {

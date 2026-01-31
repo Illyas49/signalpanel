@@ -19,10 +19,10 @@ function AnimatedStat({ value, label, suffix = '' }: { value: number; label: str
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-5xl md:text-6xl font-light text-stone-800 mb-3 tracking-tight">
+      <div className="text-5xl md:text-6xl font-light text-white mb-3 tracking-tight">
         {current}{suffix}
       </div>
-      <div className="text-sm text-stone-600 uppercase tracking-widest font-medium">{label}</div>
+      <div className="text-sm text-cyan-100 uppercase tracking-widest font-medium">{label}</div>
     </div>
   );
 }
@@ -85,14 +85,14 @@ export default function Home({ onNavigate }: HomeProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
                 onClick={() => onNavigate('Methodology')}
-                className="group px-8 py-4 bg-stone-800 text-white hover:bg-stone-900 transition-all text-sm font-medium tracking-wide flex items-center gap-2"
+                className="group px-8 py-4 bg-cyan-700 text-white hover:bg-cyan-800 transition-all text-sm font-medium tracking-wide flex items-center gap-2"
               >
                 View Methodology
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => onNavigate('Research Areas')}
-                className="px-8 py-4 text-stone-700 hover:text-stone-900 transition-all text-sm font-medium tracking-wide border-b-2 border-transparent hover:border-stone-900"
+                className="px-8 py-4 text-stone-700 hover:text-cyan-700 transition-all text-sm font-medium tracking-wide border-b-2 border-transparent hover:border-cyan-700"
               >
                 Explore Research Areas
               </button>
@@ -101,7 +101,7 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-stone-50 border-y border-stone-200 -mx-4 md:-mx-8 px-4 md:px-8">
+      <section className="py-20 md:py-24 bg-gradient-to-br from-cyan-700 to-cyan-900 -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-16 md:gap-20">
             <AnimatedStat value={12} label="Research Areas" />
@@ -114,6 +114,9 @@ export default function Home({ onNavigate }: HomeProps) {
       <section ref={domainsRef.ref} className={`py-20 md:py-24 bg-white -mx-4 md:-mx-8 px-4 md:px-8 ${domainsRef.isVisible ? 'fade-in' : ''}`}>
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
+            <div className="inline-block px-4 py-1 bg-cyan-100 text-cyan-800 text-xs uppercase tracking-widest font-medium mb-6 rounded-full">
+              Research Domains
+            </div>
             <h2 className="text-3xl md:text-4xl font-light mb-6 text-stone-900 tracking-tight">Core Research Domains</h2>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
               SignalPanel organizes investigation around six foundational areas of user experience in regulated digital environments.
@@ -129,9 +132,9 @@ export default function Home({ onNavigate }: HomeProps) {
                   className="group cursor-pointer"
                   onClick={() => setExpandedPillar(expandedPillar === index ? null : index)}
                 >
-                  <div className="p-8 bg-stone-50 border border-stone-200 hover:border-stone-800 transition-all hover:shadow-sm">
-                    <div className="mb-5">
-                      <Icon className="w-6 h-6 text-stone-700" />
+                  <div className="p-8 bg-white border border-stone-200 hover:border-cyan-600 transition-all hover:shadow-md">
+                    <div className="mb-5 p-2.5 bg-cyan-50 inline-flex rounded group-hover:bg-cyan-100 transition-colors">
+                      <Icon className="w-6 h-6 text-cyan-700" />
                     </div>
                     <h3 className="text-xl font-normal text-stone-900 mb-4 tracking-tight leading-snug">
                       {pillar.title}
@@ -140,7 +143,7 @@ export default function Home({ onNavigate }: HomeProps) {
                       {pillar.summary}
                     </p>
                     {expandedPillar === index && (
-                      <p className="text-stone-600 text-sm leading-relaxed mt-4 pt-4 border-t border-stone-200">
+                      <p className="text-stone-600 text-sm leading-relaxed mt-4 pt-4 border-t border-cyan-100">
                         {pillar.detail}
                       </p>
                     )}
@@ -155,25 +158,37 @@ export default function Home({ onNavigate }: HomeProps) {
       <section className="py-20 md:py-24 bg-stone-50 -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1 bg-cyan-100 text-cyan-800 text-xs uppercase tracking-widest font-medium mb-6 rounded-full">
+              Methodology
+            </div>
             <h2 className="text-3xl md:text-4xl font-light mb-6 text-stone-900 tracking-tight">Methodological Framework</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-12 mb-16">
-            <div className="text-center">
+            <div className="text-center p-8 bg-white border border-stone-200 rounded-lg">
+              <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-3 h-3 bg-cyan-600 rounded-full"></div>
+              </div>
               <h3 className="text-lg font-medium mb-4 text-stone-900">Panel Construction</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
                 Recruitment and qualification of demographically diverse participant groups following structured selection criteria.
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center p-8 bg-white border border-stone-200 rounded-lg">
+              <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-3 h-3 bg-cyan-600 rounded-full"></div>
+              </div>
               <h3 className="text-lg font-medium mb-4 text-stone-900">Structured Observation</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
                 Execution of controlled research protocols ensuring consistency and methodological integrity.
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center p-8 bg-white border border-stone-200 rounded-lg">
+              <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-3 h-3 bg-cyan-600 rounded-full"></div>
+              </div>
               <h3 className="text-lg font-medium mb-4 text-stone-900">Aggregated Analysis</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
                 Synthesis of behavioral data into aggregated reports focusing on systemic observations.
@@ -182,7 +197,7 @@ export default function Home({ onNavigate }: HomeProps) {
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <div className="p-10 bg-white border border-stone-200">
+            <div className="p-10 bg-gradient-to-br from-cyan-50 to-cyan-100 border-l-4 border-cyan-600">
               <div className="space-y-6 text-stone-700 text-center" style={{ lineHeight: '1.8' }}>
                 <p>
                   SignalPanel operates as an independent research organization focused on the design, execution, and analysis of structured user research in regulated digital environments.
@@ -198,36 +213,41 @@ export default function Home({ onNavigate }: HomeProps) {
 
       <section className="py-20 md:py-24 bg-white border-t border-stone-200 -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light mb-16 text-stone-900 text-center tracking-tight">Research Scope & Boundaries</h2>
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1 bg-cyan-100 text-cyan-800 text-xs uppercase tracking-widest font-medium mb-6 rounded-full">
+              Scope
+            </div>
+            <h2 className="text-3xl md:text-4xl font-light mb-6 text-stone-900 tracking-tight">Research Scope & Boundaries</h2>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-16">
-            <div>
-              <h3 className="text-xs uppercase tracking-widest text-stone-500 mb-8 font-medium">Organizational Activities</h3>
+            <div className="p-8 bg-cyan-50 border-l-4 border-cyan-600">
+              <h3 className="text-xs uppercase tracking-widest text-cyan-800 mb-8 font-medium">Organizational Activities</h3>
               <div className="space-y-5 text-stone-700 text-sm" style={{ lineHeight: '1.8' }}>
                 <p className="flex items-start gap-3">
-                  <span className="text-stone-400 mt-1 font-light">—</span>
+                  <span className="text-cyan-600 mt-1 font-light">—</span>
                   <span>Conduct structured, independent research on user experience in regulated digital environments</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-stone-400 mt-1 font-light">—</span>
+                  <span className="text-cyan-600 mt-1 font-light">—</span>
                   <span>Observe and document user interaction patterns across diverse participant populations</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-stone-400 mt-1 font-light">—</span>
+                  <span className="text-cyan-600 mt-1 font-light">—</span>
                   <span>Report findings at an aggregated level without identifying individual users or platforms</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-stone-400 mt-1 font-light">—</span>
+                  <span className="text-cyan-600 mt-1 font-light">—</span>
                   <span>Maintain methodological transparency through published research protocols</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-stone-400 mt-1 font-light">—</span>
+                  <span className="text-cyan-600 mt-1 font-light">—</span>
                   <span>Document jurisdictional variations in user experience and interface implementation</span>
                 </p>
               </div>
             </div>
 
-            <div>
+            <div className="p-8 bg-stone-50 border-l-4 border-stone-300">
               <h3 className="text-xs uppercase tracking-widest text-stone-500 mb-8 font-medium">Excluded Activities</h3>
               <div className="space-y-5 text-stone-500 text-sm" style={{ lineHeight: '1.8' }}>
                 <p className="flex items-start gap-3">
