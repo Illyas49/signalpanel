@@ -140,7 +140,7 @@ export default function Home({ onNavigate }: HomeProps) {
           <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative z-10">
             <AnimatedStat value={12} label="Research Areas" />
             <AnimatedStat value={8} label="Jurisdictions" />
-            <AnimatedStat value={100000} label="Participants" suffix="+" />
+            <AnimatedStat value={100} label="Participants" suffix="K+" />
           </div>
         </div>
       </div>
