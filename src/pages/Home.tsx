@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, Users, Globe, FileText, Database, Shield, Layout, CheckCircle2, Target, TrendingUp } from 'lucide-react';
+import { ArrowRight, Users, Globe, FileText, Database, Shield, Layout, CheckCircle2, Target, TrendingUp, ChevronDown } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useAnimatedNumber } from '../hooks/useAnimatedNumber';
 import Hero from '../components/layout/Hero';
@@ -130,34 +130,26 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </Hero>
 
-      <div className="relative -mt-24 z-20">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="bg-gradient-to-br from-teal-700 via-teal-600 to-cyan-600 rounded-[3rem] shadow-2xl p-12 md:p-16 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl -ml-48 -mb-48"></div>
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative z-10">
-              <AnimatedStat value={12} label="Research Areas" />
-              <AnimatedStat value={8} label="Jurisdictions" />
-              <AnimatedStat value={100000} label="Participants" suffix="+" />
-            </div>
-          </div>
+      <Section background="gradient" spacing="md" className="relative">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative z-10">
+          <AnimatedStat value={12} label="Research Areas" />
+          <AnimatedStat value={8} label="Jurisdictions" />
+          <AnimatedStat value={100000} label="Participants" suffix="+" />
         </div>
-      </div>
+      </Section>
 
-      <div className="relative h-32"></div>
-
-      <Section ref={domainsRef.ref} background="white" spacing="lg" className={`relative ${domainsRef.isVisible ? 'fade-in' : ''}`}>
+      <Section ref={domainsRef.ref} background="white" spacing="md" className={`relative ${domainsRef.isVisible ? 'fade-in' : ''}`}>
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="relative z-10">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-teal-100 text-teal-800 rounded-full mb-8 font-bold text-sm shadow-lg">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-teal-100 text-teal-800 rounded-full mb-6 font-bold text-sm shadow-lg">
               <Target className="w-5 h-5" />
               Research Domains
             </div>
-            <Heading level={2} align="center" className="mb-8">
+            <Heading level={2} align="center" className="mb-5">
               Core Research Domains
             </Heading>
             <Text size="lg" variant="muted" className="max-w-3xl mx-auto leading-relaxed text-lg">
@@ -194,9 +186,9 @@ export default function Home({ onNavigate }: HomeProps) {
                           </Text>
                         </div>
                       )}
-                      <div className="mt-8 flex items-center text-teal-600 font-semibold text-sm group-hover:text-teal-700 group-hover:gap-3 transition-all">
+                      <div className="mt-6 flex items-center text-teal-600 font-semibold text-sm group-hover:text-teal-700 transition-all">
                         {isExpanded ? 'Show less' : 'Learn more'}
-                        <ArrowRight className={`w-4 h-4 ml-2 transition-transform duration-300 ${isExpanded ? 'rotate-90' : 'group-hover:translate-x-1'}`} />
+                        <ChevronDown className={`w-5 h-5 ml-2 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
                       </div>
                     </Card>
                   </div>
@@ -207,15 +199,15 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </Section>
 
-      <div className="relative h-32 overflow-hidden my-8">
+      <div className="relative h-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-teal-600 via-cyan-500 to-teal-600 transform -skew-y-3 origin-top-left shadow-xl"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       </div>
 
-      <Section ref={methodRef.ref} background="gray" spacing="lg" className={`relative ${methodRef.isVisible ? 'fade-in' : ''}`}>
+      <Section ref={methodRef.ref} background="gray" spacing="md" className={`relative ${methodRef.isVisible ? 'fade-in' : ''}`}>
         <div className="relative z-10">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-full mb-8 font-bold text-sm shadow-xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-full mb-6 font-bold text-sm shadow-xl">
               <CheckCircle2 className="w-5 h-5" />
               Methodology
             </div>
@@ -224,7 +216,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </Heading>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 mb-20">
+          <div className="grid md:grid-cols-3 gap-10 mb-12">
             {[
               { title: 'Panel Construction', desc: 'Recruitment and qualification of demographically diverse participant groups following structured selection criteria.', icon: Users },
               { title: 'Structured Observation', desc: 'Execution of controlled research protocols ensuring consistency and methodological integrity.', icon: Target },
@@ -235,10 +227,10 @@ export default function Home({ onNavigate }: HomeProps) {
                 <div key={idx} className="relative group hover-lift">
                   <div className="absolute -inset-1 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-3xl blur-lg opacity-25 group-hover:opacity-50 transition duration-500"></div>
                   <Card variant="elevated" padding="lg" className="relative text-center bg-white h-full">
-                    <div className="w-24 h-24 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-12 h-12 text-white" />
+                    <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-300">
+                      <Icon className="w-10 h-10 text-white" />
                     </div>
-                    <Heading level={3} align="center" className="mb-6">{item.title}</Heading>
+                    <Heading level={3} align="center" className="mb-4">{item.title}</Heading>
                     <Text size="base" variant="muted" className="leading-relaxed">
                       {item.desc}
                     </Text>
@@ -273,16 +265,16 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </Section>
 
-      <div className="relative h-32 overflow-hidden my-8">
+      <div className="relative h-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-l from-teal-600 via-cyan-500 to-teal-600 transform skew-y-3 origin-top-left shadow-xl"></div>
         <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/10 to-transparent"></div>
       </div>
 
-      <Section background="white" spacing="lg" className="relative">
+      <Section background="white" spacing="md" className="relative">
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-teal-500/10 to-transparent rounded-full blur-3xl -ml-48 -mb-48 pointer-events-none"></div>
 
-        <div className="text-center mb-20 relative z-10">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-stone-100 text-stone-700 rounded-full mb-8 font-bold text-sm shadow-lg">
+        <div className="text-center mb-12 relative z-10">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-stone-100 text-stone-700 rounded-full mb-6 font-bold text-sm shadow-lg">
             <FileText className="w-5 h-5" />
             Scope
           </div>
@@ -291,9 +283,9 @@ export default function Home({ onNavigate }: HomeProps) {
           </Heading>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 relative z-10">
+        <div className="grid md:grid-cols-2 gap-10 relative z-10">
           <Card variant="elevated" padding="lg" className="border-l-4 border-teal-600 hover:shadow-2xl transition-shadow duration-500">
-            <div className="mb-10">
+            <div className="mb-8">
               <div className="flex items-center gap-4 mb-2">
                 <div className="p-3 bg-teal-100 rounded-xl">
                   <CheckCircle2 className="w-6 h-6 text-teal-700" />
@@ -318,7 +310,7 @@ export default function Home({ onNavigate }: HomeProps) {
           </Card>
 
           <Card variant="bordered" padding="lg" className="bg-stone-50/50 hover:shadow-xl transition-shadow duration-500">
-            <div className="mb-10">
+            <div className="mb-8">
               <div className="flex items-center gap-4 mb-2">
                 <div className="p-3 bg-stone-200 rounded-xl">
                   <FileText className="w-6 h-6 text-stone-600" />
