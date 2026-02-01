@@ -33,7 +33,7 @@ function AnimatedStat({ value, label, suffix = '' }: { value: number; label: str
       <div className="text-5xl md:text-6xl font-light text-white mb-3 tracking-tight">
         {current}{suffix}
       </div>
-      <div className="text-sm text-cyan-100 uppercase tracking-widest font-medium">{label}</div>
+      <div className="text-sm text-teal-100 uppercase tracking-widest font-medium">{label}</div>
     </div>
   );
 }
@@ -101,14 +101,14 @@ export default function Home({ onNavigate }: HomeProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={() => onNavigate('Methodology')}
-              className="group px-8 py-4 bg-white text-cyan-800 hover:bg-cyan-50 transition-all text-sm font-medium tracking-wide flex items-center gap-2 shadow-lg"
+              className="group px-8 py-4 bg-white text-teal-800 hover:bg-teal-50 transition-all text-sm font-medium tracking-wide flex items-center gap-2 shadow-lg"
             >
               View Methodology
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={() => onNavigate('Research Areas')}
-              className="px-8 py-4 text-white hover:text-cyan-100 transition-all text-sm font-medium tracking-wide border-b-2 border-white/50 hover:border-white"
+              className="px-8 py-4 text-white hover:text-teal-100 transition-all text-sm font-medium tracking-wide border-b-2 border-white/50 hover:border-white"
             >
               Explore Research Areas
             </button>
@@ -141,9 +141,9 @@ export default function Home({ onNavigate }: HomeProps) {
                   className="group cursor-pointer"
                   onClick={() => setExpandedPillar(expandedPillar === index ? null : index)}
                 >
-                  <Card variant="default" padding="md" className="hover:border-cyan-600 transition-all hover:shadow-md h-full">
-                    <div className="mb-5 p-2.5 bg-cyan-50 inline-flex rounded group-hover:bg-cyan-100 transition-colors">
-                      <Icon className="w-6 h-6 text-cyan-700" />
+                  <Card variant="default" padding="md" className="hover:border-teal-600 transition-all hover:shadow-md h-full">
+                    <div className="mb-5 p-2.5 bg-teal-50 inline-flex rounded group-hover:bg-teal-100 transition-colors">
+                      <Icon className="w-6 h-6 text-teal-700" />
                     </div>
                     <Heading level={3} className="mb-4">
                       {pillar.title}
@@ -152,7 +152,7 @@ export default function Home({ onNavigate }: HomeProps) {
                       {pillar.summary}
                     </Text>
                     {expandedPillar === index && (
-                      <div className="mt-4 pt-4 border-t border-cyan-100">
+                      <div className="mt-4 pt-4 border-t border-teal-100">
                         <Text size="sm" variant="muted">
                           {pillar.detail}
                         </Text>
@@ -170,8 +170,8 @@ export default function Home({ onNavigate }: HomeProps) {
         <AnalysisSection badge="Methodology" title="Methodological Framework">
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <Card variant="default" padding="md" className="text-center">
-              <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="w-3 h-3 bg-cyan-600 rounded-full"></div>
+              <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-3 h-3 bg-teal-600 rounded-full"></div>
               </div>
               <Heading level={3} align="center" className="mb-4">Panel Construction</Heading>
               <Text size="sm" variant="muted">
@@ -180,8 +180,8 @@ export default function Home({ onNavigate }: HomeProps) {
             </Card>
 
             <Card variant="default" padding="md" className="text-center">
-              <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="w-3 h-3 bg-cyan-600 rounded-full"></div>
+              <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-3 h-3 bg-teal-600 rounded-full"></div>
               </div>
               <Heading level={3} align="center" className="mb-4">Structured Observation</Heading>
               <Text size="sm" variant="muted">
@@ -190,8 +190,8 @@ export default function Home({ onNavigate }: HomeProps) {
             </Card>
 
             <Card variant="default" padding="md" className="text-center">
-              <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="w-3 h-3 bg-cyan-600 rounded-full"></div>
+              <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-3 h-3 bg-teal-600 rounded-full"></div>
               </div>
               <Heading level={3} align="center" className="mb-4">Aggregated Analysis</Heading>
               <Text size="sm" variant="muted">
@@ -218,23 +218,23 @@ export default function Home({ onNavigate }: HomeProps) {
           <div className="grid md:grid-cols-2 gap-16">
             <InsightBlock title="Organizational Activities" variant="default">
               <p className="flex items-start gap-3">
-                <span className="text-cyan-600 mt-1 font-light">—</span>
+                <span className="text-teal-600 mt-1 font-light">—</span>
                 <span>Conduct structured, independent research on user experience in regulated digital environments</span>
               </p>
               <p className="flex items-start gap-3">
-                <span className="text-cyan-600 mt-1 font-light">—</span>
+                <span className="text-teal-600 mt-1 font-light">—</span>
                 <span>Observe and document user interaction patterns across diverse participant populations</span>
               </p>
               <p className="flex items-start gap-3">
-                <span className="text-cyan-600 mt-1 font-light">—</span>
+                <span className="text-teal-600 mt-1 font-light">—</span>
                 <span>Report findings at an aggregated level without identifying individual users or platforms</span>
               </p>
               <p className="flex items-start gap-3">
-                <span className="text-cyan-600 mt-1 font-light">—</span>
+                <span className="text-teal-600 mt-1 font-light">—</span>
                 <span>Maintain methodological transparency through published research protocols</span>
               </p>
               <p className="flex items-start gap-3">
-                <span className="text-cyan-600 mt-1 font-light">—</span>
+                <span className="text-teal-600 mt-1 font-light">—</span>
                 <span>Document jurisdictional variations in user experience and interface implementation</span>
               </p>
             </InsightBlock>

@@ -138,7 +138,7 @@ export default function ControlDiscoverability() {
           <div className="space-y-8">
             <InsightBlock variant="default">
               <p>
-                <strong className="text-cyan-800">Visual Prominence Impact:</strong> Research consistently demonstrates that visual prominence substantially affects initial
+                <strong className="text-teal-800">Visual Prominence Impact:</strong> Research consistently demonstrates that visual prominence substantially affects initial
                 discovery. Controls with dedicated navigation positions or distinctive visual treatments
                 are located significantly faster than those embedded in generic settings lists without
                 visual differentiation.
@@ -147,7 +147,7 @@ export default function ControlDiscoverability() {
 
             <InsightBlock variant="default">
               <p>
-                <strong className="text-cyan-800">Navigation Depth Barriers:</strong> Deep menu nesting creates systematic discovery failures. Controls requiring three or more
+                <strong className="text-teal-800">Navigation Depth Barriers:</strong> Deep menu nesting creates systematic discovery failures. Controls requiring three or more
                 navigational steps exhibit substantially lower organic discovery rates, and users often
                 abandon search attempts before exhausting all potential menu locations.
               </p>
@@ -155,7 +155,7 @@ export default function ControlDiscoverability() {
 
             <InsightBlock variant="default">
               <p>
-                <strong className="text-cyan-800">Label Terminology Mismatches:</strong> Label terminology mismatches between user expectations and platform naming conventions
+                <strong className="text-teal-800">Label Terminology Mismatches:</strong> Label terminology mismatches between user expectations and platform naming conventions
                 generate search failures. Users employ varied terminology when seeking controls, and
                 platforms that use narrow technical labels miss opportunities for discovery through
                 search mechanisms.
@@ -164,7 +164,7 @@ export default function ControlDiscoverability() {
 
             <InsightBlock variant="default">
               <p>
-                <strong className="text-cyan-800">Contextual Presentation Success:</strong> Contextual control presentation achieves higher visibility than settings-only access,
+                <strong className="text-teal-800">Contextual Presentation Success:</strong> Contextual control presentation achieves higher visibility than settings-only access,
                 particularly for users who do not proactively explore settings menus. However, contextual
                 offers presented too frequently or at inappropriate moments show diminishing effectiveness
                 through user habituation.
@@ -173,7 +173,7 @@ export default function ControlDiscoverability() {
 
             <InsightBlock variant="default">
               <p>
-                <strong className="text-cyan-800">Access Retention Variance:</strong> Persistent accessibility shows high variability. Users who discover controls through
+                <strong className="text-teal-800">Access Retention Variance:</strong> Persistent accessibility shows high variability. Users who discover controls through
                 deliberate search generally relocate them successfully in subsequent sessions. Users who
                 encounter controls through contextual presentation or external guidance show lower
                 subsequent relocation success, suggesting passive discovery does not establish durable

@@ -2,16 +2,18 @@ import { ReactNode } from 'react';
 
 interface SectionProps {
   children: ReactNode;
-  background?: 'white' | 'gray' | 'cyan' | 'gradient';
+  background?: 'white' | 'gray' | 'cyan' | 'gradient' | 'dark' | 'accent';
   spacing?: 'sm' | 'md' | 'lg';
   className?: string;
 }
 
 const backgrounds = {
   white: 'bg-white',
-  gray: 'bg-stone-50',
-  cyan: 'bg-cyan-50',
-  gradient: 'bg-gradient-to-br from-cyan-700 to-cyan-900'
+  gray: 'bg-gradient-to-b from-stone-50 to-stone-100',
+  cyan: 'bg-gradient-to-br from-teal-50 to-cyan-50',
+  gradient: 'bg-gradient-to-br from-teal-700 via-cyan-700 to-cyan-900',
+  dark: 'bg-gradient-to-br from-stone-800 to-stone-900 text-white',
+  accent: 'bg-gradient-to-br from-teal-600 to-cyan-700 text-white'
 };
 
 const spacings = {

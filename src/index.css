@@ -82,15 +82,15 @@
   }
 
   .accent-color {
-    @apply text-cyan-700;
+    @apply text-teal-700;
   }
 
   .accent-bg {
-    @apply bg-cyan-700;
+    @apply bg-teal-700;
   }
 
   .accent-border {
-    @apply border-cyan-700;
+    @apply border-teal-700;
   }
 
   .section-bg-light {
@@ -98,6 +98,46 @@
   }
 
   .section-bg-subtle {
-    @apply bg-stone-50;
+    @apply bg-gradient-to-b from-stone-50 to-stone-100;
+  }
+
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .scale-in {
+    animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
   }
 }

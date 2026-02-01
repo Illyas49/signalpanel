@@ -8,9 +8,9 @@ interface InsightBlockProps {
 }
 
 const variants = {
-  default: 'bg-cyan-50 border-l-4 border-cyan-600',
-  highlight: 'bg-gradient-to-br from-cyan-50 to-cyan-100 border-l-4 border-cyan-600',
-  conclusion: 'bg-gradient-to-br from-cyan-100 to-cyan-200 border-l-4 border-cyan-700'
+  default: 'bg-gradient-to-br from-teal-50 to-cyan-50 border-l-4 border-teal-600 shadow-md',
+  highlight: 'bg-gradient-to-br from-teal-100 to-cyan-100 border-l-4 border-teal-700 shadow-lg',
+  conclusion: 'bg-gradient-to-br from-teal-600 to-cyan-700 border-l-4 border-teal-800 shadow-xl text-white'
 };
 
 export default function InsightBlock({
@@ -20,13 +20,13 @@ export default function InsightBlock({
   className = ''
 }: InsightBlockProps) {
   return (
-    <div className={`${variants[variant]} p-8 md:p-10 rounded-r-lg ${className}`}>
+    <div className={`${variants[variant]} p-8 md:p-10 rounded-r-2xl ${className}`}>
       {title && (
-        <h3 className="text-xs uppercase tracking-widest text-cyan-800 mb-6 font-medium">
+        <h3 className={`text-xs uppercase tracking-widest mb-6 font-semibold ${variant === 'conclusion' ? 'text-teal-100' : 'text-teal-800'}`}>
           {title}
         </h3>
       )}
-      <div className="space-y-4 text-stone-700" style={{ lineHeight: '1.8' }}>
+      <div className={`space-y-4 ${variant === 'conclusion' ? 'text-white' : 'text-stone-700'}`} style={{ lineHeight: '1.8' }}>
         {children}
       </div>
     </div>

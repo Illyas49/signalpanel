@@ -10,9 +10,9 @@ interface HeroProps {
 }
 
 const overlays = {
-  light: 'bg-gradient-to-br from-cyan-700/70 to-cyan-900/75',
-  medium: 'bg-gradient-to-br from-cyan-700/85 to-cyan-900/90',
-  dark: 'bg-gradient-to-br from-cyan-700/95 to-cyan-900/95'
+  light: 'bg-gradient-to-br from-teal-700/70 via-cyan-700/75 to-cyan-900/80',
+  medium: 'bg-gradient-to-br from-teal-700/85 via-cyan-700/87 to-cyan-900/90',
+  dark: 'bg-gradient-to-br from-teal-800/95 via-cyan-800/95 to-cyan-950/97'
 };
 
 const heights = {
@@ -32,7 +32,7 @@ export default function Hero({
   const roundedClass = rounded ? 'rounded-3xl' : '';
 
   return (
-    <section className={`-mx-4 md:-mx-8 px-4 md:px-8 relative overflow-hidden ${roundedClass}`}>
+    <section className={`-mx-4 md:-mx-8 px-4 md:px-8 relative overflow-hidden ${roundedClass} ${rounded ? 'shadow-2xl' : ''}`}>
       <div className={`${heights[height]} flex items-center justify-center ${roundedClass}`}>
         {imageUrl && (
           <div className={`absolute inset-0 z-0 ${roundedClass} overflow-hidden`}>

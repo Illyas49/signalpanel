@@ -118,8 +118,8 @@ export default function CommunicationClarity() {
               const Icon = dimension.icon;
               return (
                 <Card key={index} variant="elevated" padding="lg" className="hover:shadow-lg transition-shadow">
-                  <div className="mb-6 p-3 bg-cyan-50 inline-flex rounded-lg">
-                    <Icon className="w-7 h-7 text-cyan-700" />
+                  <div className="mb-6 p-3 bg-teal-50 inline-flex rounded-lg">
+                    <Icon className="w-7 h-7 text-teal-700" />
                   </div>
                   <Heading level={3} weight="medium" className="mb-6">
                     {dimension.title}
@@ -147,7 +147,7 @@ export default function CommunicationClarity() {
           <div className="space-y-8">
             <InsightBlock variant="default">
               <p>
-                <strong className="text-cyan-800">Readability Gaps:</strong> Research consistently identifies substantial readability gaps between platform communications
+                <strong className="text-teal-800">Readability Gaps:</strong> Research consistently identifies substantial readability gaps between platform communications
                 and target user populations. Terms of service and privacy policies frequently measure at
                 college reading levels or higher, creating comprehension barriers for significant user
                 segments including younger users near minimum age thresholds.
@@ -156,7 +156,7 @@ export default function CommunicationClarity() {
 
             <InsightBlock variant="default">
               <p>
-                <strong className="text-cyan-800">Terminology Barriers:</strong> Technical terminology appears extensively in communications about safety controls and privacy
+                <strong className="text-teal-800">Terminology Barriers:</strong> Technical terminology appears extensively in communications about safety controls and privacy
                 settings. Terms like "self-exclusion," "geolocation," and "biometric authentication" are
                 used without definition, limiting comprehension among users unfamiliar with these concepts.
               </p>
@@ -164,7 +164,7 @@ export default function CommunicationClarity() {
 
             <InsightBlock variant="default">
               <p>
-                <strong className="text-cyan-800">Warning Variability:</strong> Warning message effectiveness shows high variability. Specific warnings that clearly describe
+                <strong className="text-teal-800">Warning Variability:</strong> Warning message effectiveness shows high variability. Specific warnings that clearly describe
                 risks and consequences generate measurable behavioral responses. Generic warnings using
                 abstract language show minimal impact on user decision-making and exhibit habituation effects
                 when presented frequently.

@@ -8,10 +8,10 @@ interface CardProps {
 }
 
 const variants = {
-  default: 'bg-white border border-stone-200',
-  elevated: 'bg-white shadow-md',
-  bordered: 'bg-white border-2 border-stone-300',
-  accent: 'bg-cyan-50 border border-cyan-200'
+  default: 'bg-white border border-stone-200/60 shadow-sm hover:shadow-md transition-shadow duration-300',
+  elevated: 'bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-stone-100',
+  bordered: 'bg-white border-2 border-stone-300 shadow-sm',
+  accent: 'bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200/60 shadow-md'
 };
 
 const paddings = {
@@ -27,7 +27,7 @@ export default function Card({
   className = ''
 }: CardProps) {
   return (
-    <div className={`${variants[variant]} ${paddings[padding]} rounded-lg ${className}`}>
+    <div className={`${variants[variant]} ${paddings[padding]} rounded-2xl ${className}`}>
       {children}
     </div>
   );
