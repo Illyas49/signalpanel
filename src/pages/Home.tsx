@@ -130,14 +130,20 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </Hero>
 
-      <Section background="gradient" spacing="md" className="relative">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative z-10">
-          <AnimatedStat value={12} label="Research Areas" />
-          <AnimatedStat value={8} label="Jurisdictions" />
-          <AnimatedStat value={100000} label="Participants" suffix="+" />
+      <div className="h-16"></div>
+
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="bg-gradient-to-br from-teal-700 via-teal-600 to-cyan-600 rounded-3xl shadow-2xl p-12 md:p-16 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl -ml-48 -mb-48"></div>
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative z-10">
+            <AnimatedStat value={12} label="Research Areas" />
+            <AnimatedStat value={8} label="Jurisdictions" />
+            <AnimatedStat value={100000} label="Participants" suffix="+" />
+          </div>
         </div>
-      </Section>
+      </div>
 
       <Section ref={domainsRef.ref} background="white" spacing="md" className={`relative ${domainsRef.isVisible ? 'fade-in' : ''}`}>
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -293,7 +299,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 <Heading level={3}>Organizational Activities</Heading>
               </div>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-2">
               {[
                 'Conduct structured, independent research on user experience in regulated digital environments',
                 'Observe and document user interaction patterns across diverse participant populations',
@@ -318,7 +324,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 <Heading level={3} className="text-stone-600">Excluded Activities</Heading>
               </div>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-2">
               {[
                 'Platform promotion, endorsement, or ranking services',
                 'Optimization consulting, marketing services, or compliance advice',
