@@ -315,9 +315,9 @@ export default function Home({ onNavigate }: HomeProps) {
           </Heading>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 relative z-10 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 relative z-10 max-w-6xl mx-auto items-start">
           <div className="group">
-            <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-teal-200 p-6 shadow-xl">
+            <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-teal-200 p-6 shadow-xl h-fit">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-full blur-2xl"></div>
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
@@ -385,7 +385,7 @@ export default function Home({ onNavigate }: HomeProps) {
           </div>
 
           <div className="group">
-            <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-stone-300 p-6 shadow-xl">
+            <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-stone-300 p-6 shadow-xl h-fit">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-stone-400/10 to-stone-500/10 rounded-full blur-2xl"></div>
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
