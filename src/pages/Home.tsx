@@ -166,32 +166,41 @@ export default function Home({ onNavigate }: HomeProps) {
             </Text>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {researchPillars.map((pillar, index) => {
               const Icon = pillar.icon;
+              const borderColors = [
+                'border-t-blue-500',
+                'border-t-cyan-500',
+                'border-t-indigo-500',
+                'border-t-teal-500',
+                'border-t-emerald-500',
+                'border-t-sky-500'
+              ];
               return (
                 <div
                   key={index}
                   className="group cursor-pointer"
                   onClick={() => setSelectedPillar(index)}
                 >
-                  <Card variant="compact" padding="xs" hover3d className="relative h-full bg-white">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <div className={`flex-shrink-0 p-1.5 bg-gradient-to-br ${pillar.color} rounded-lg shadow-sm group-hover:scale-105 transition-transform duration-300`}>
-                        <Icon className="w-3.5 h-3.5 text-white" />
-                      </div>
-                      <Heading level={3} className="text-[4px] font-semibold group-hover:text-teal-700 transition-colors leading-tight">
-                        {pillar.title}
-                      </Heading>
+                  <div className={`bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-t-4 ${borderColors[index]} p-6 h-full flex flex-col`}>
+                    <div className="mb-3">
+                      <Badge variant="secondary" className="text-xs">
+                        Research Area
+                      </Badge>
+                      <span className="text-sm text-gray-500 ml-2">2024</span>
                     </div>
-                    <Text size="base" variant="muted" className="mb-1.5 leading-relaxed text-[8px] pl-8">
+                    <Heading level={3} className="text-lg font-bold mb-3 text-gray-900 group-hover:text-teal-700 transition-colors">
+                      {pillar.title}
+                    </Heading>
+                    <Text size="base" variant="muted" className="mb-4 leading-relaxed text-sm flex-grow">
                       {pillar.summary}
                     </Text>
-                    <div className="flex items-center text-teal-600 font-medium text-xs group-hover:text-teal-700 transition-all pl-8">
-                      Learn more
-                      <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 transition-transform duration-300" />
+                    <div className="flex items-center text-blue-600 font-medium text-sm group-hover:text-blue-700 transition-all">
+                      Download PDF
+                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
-                  </Card>
+                  </div>
                 </div>
               );
             })}
