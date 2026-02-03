@@ -180,14 +180,14 @@ export default function Home({ onNavigate }: HomeProps) {
                       <div className={`p-1.5 bg-gradient-to-br ${pillar.color} rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300`}>
                         <Icon className="w-3 h-3 text-white" />
                       </div>
-                      <Heading level={3} className="text-[9px] font-semibold group-hover:text-teal-700 transition-colors leading-tight">
+                      <Heading level={3} className="text-[8px] font-bold tracking-tight group-hover:text-teal-700 transition-colors leading-tight uppercase">
                         {pillar.title}
                       </Heading>
                     </div>
-                    <Text size="base" variant="muted" className="mb-1.5 leading-relaxed text-[10px]">
+                    <Text size="base" variant="muted" className="mb-1.5 leading-relaxed text-xs">
                       {pillar.summary}
                     </Text>
-                    <div className="mt-1.5 flex items-center text-teal-600 font-semibold text-[10px] group-hover:text-teal-700 transition-all">
+                    <div className="mt-1.5 flex items-center text-teal-600 font-semibold text-xs group-hover:text-teal-700 transition-all">
                       Learn more
                       <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
