@@ -1,9 +1,9 @@
 export default function AccountSettingsSelfManagement() {
   return (
-    <div className="space-y-16">
-      <section>
-        <h1 className="mb-8">Account Settings & Self-Management</h1>
-        <div className="h-1 w-24 bg-stone-800 mb-12"></div>
+    <div className="space-y-12 max-w-5xl mx-auto">
+      <section className="border-b-2 border-teal-200 pb-8">
+        <h1 className="mb-4 text-4xl">Account Settings & Self-Management</h1>
+        <div className="h-1 w-20 bg-teal-600 mb-8"></div>
 
         <div className="max-w-4xl space-y-6">
           <p className="text-lg leading-relaxed">

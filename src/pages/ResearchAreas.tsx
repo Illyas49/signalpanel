@@ -82,18 +82,18 @@ export default function ResearchAreas({ onNavigate }: ResearchAreasProps) {
 
   return (
     <div>
-      <section className="py-16 md:py-12 border-b-2 border-stone-200 bg-gradient-to-b from-white to-[#F6F7F9] -mx-4 md:-mx-8 px-4 md:px-8">
+      <section className="py-10 md:py-12 border-b-2 border-teal-200 bg-gradient-to-b from-white to-teal-50/30 -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="mb-6">Research Areas</h1>
-          <div className="h-1 w-24 bg-slate-700 mb-8"></div>
+          <div className="h-1 w-24 bg-teal-600 mb-8"></div>
           <p className="text-xl text-stone-600 max-w-3xl" style={{ lineHeight: '1.7' }}>
             Twelve distinct dimensions of user experience in regulated digital environments
           </p>
         </div>
       </section>
 
-      <section className="py-12 max-w-7xl mx-auto">
-        <div className="space-y-6 mb-16">
+      <section className="py-10 max-w-7xl mx-auto">
+        <div className="space-y-6 mb-10">
           <p className="text-lg" style={{ lineHeight: '1.7' }}>
             User experience in regulated digital environments is multidimensional. Interface design,
             information presentation, control accessibility, and communication clarity each function as
@@ -108,7 +108,7 @@ export default function ResearchAreas({ onNavigate }: ResearchAreasProps) {
           </p>
         </div>
 
-        <div className="bg-[#EEF1F5] p-8 border-l-4 border-slate-700">
+        <div className="bg-teal-50/50 p-8 border-l-4 border-teal-600 rounded-r-lg">
           <p style={{ lineHeight: '1.7' }}>
             Research areas serve as organizing frameworks for study design. They define scope, inform
             participant task selection, and guide analytical focus. By studying these dimensions separately,
@@ -118,10 +118,10 @@ export default function ResearchAreas({ onNavigate }: ResearchAreasProps) {
         </div>
       </section>
 
-      <section className="py-12 bg-[#EEF1F5] -mx-4 md:-mx-8 px-4 md:px-8">
+      <section className="py-10 bg-teal-50/30 -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="mb-4">Active Research Areas</h2>
-          <p className="text-stone-700 mb-12 max-w-3xl" style={{ lineHeight: '1.7' }}>
+          <p className="text-stone-700 mb-10 max-w-3xl" style={{ lineHeight: '1.7' }}>
             SignalPanel currently conducts research across twelve distinct areas. Each area page includes
             detailed information on key dimensions, observed patterns, and reporting approaches.
           </p>

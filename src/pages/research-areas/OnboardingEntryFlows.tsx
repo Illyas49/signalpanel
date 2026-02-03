@@ -1,9 +1,9 @@
 export default function OnboardingEntryFlows() {
   return (
-    <div className="space-y-16">
-      <section>
-        <h1 className="mb-8">Onboarding & Entry Flows</h1>
-        <div className="h-1 w-24 bg-stone-800 mb-12"></div>
+    <div className="space-y-12 max-w-5xl mx-auto">
+      <section className="border-b-2 border-teal-200 pb-8">
+        <h1 className="mb-4 text-4xl">Onboarding & Entry Flows</h1>
+        <div className="h-1 w-20 bg-teal-600 mb-8"></div>
 
         <div className="max-w-4xl space-y-6">
           <p className="text-lg leading-relaxed">
@@ -28,12 +28,10 @@ export default function OnboardingEntryFlows() {
         </div>
       </section>
 
-      <div className="border-t border-stone-200"></div>
+      <section className="bg-teal-50/30 -mx-4 px-4 py-8 rounded-lg">
+        <h2 className="mb-8 text-2xl">Key Dimensions</h2>
 
-      <section className="max-w-4xl">
-        <h2 className="mb-10">Key Dimensions</h2>
-
-        <div className="space-y-12">
+        <div className="space-y-10">
           <div>
             <h3 className="text-xl font-semibold mb-4 text-stone-900">Registration Sequencing</h3>
             <p className="mb-4 leading-relaxed text-stone-700">
@@ -157,10 +155,8 @@ export default function OnboardingEntryFlows() {
         </div>
       </section>
 
-      <div className="border-t border-stone-200"></div>
-
-      <section className="max-w-4xl">
-        <h2 className="mb-6">Observed Patterns</h2>
+      <section>
+        <h2 className="mb-6 text-2xl">Observed Patterns</h2>
         <div className="space-y-6">
           <p className="leading-relaxed text-stone-700">
             Research consistently observes that disclosure fatigue occurs when entry flows present
