@@ -176,18 +176,18 @@ export default function Home({ onNavigate }: HomeProps) {
                   onClick={() => setSelectedPillar(index)}
                 >
                   <Card variant="compact" padding="xs" hover3d className="relative h-full bg-white">
-                    <div className="flex items-start gap-2.5 mb-2">
-                      <div className={`flex-shrink-0 p-2 bg-gradient-to-br ${pillar.color} rounded-lg shadow-sm group-hover:scale-105 transition-transform duration-300`}>
-                        <Icon className="w-4 h-4 text-white" />
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <div className={`flex-shrink-0 p-1.5 bg-gradient-to-br ${pillar.color} rounded-lg shadow-sm group-hover:scale-105 transition-transform duration-300`}>
+                        <Icon className="w-3.5 h-3.5 text-white" />
                       </div>
-                      <Heading level={3} className="text-sm font-semibold group-hover:text-teal-700 transition-colors leading-snug pt-0.5">
+                      <Heading level={3} className="text-xs font-semibold group-hover:text-teal-700 transition-colors leading-tight">
                         {pillar.title}
                       </Heading>
                     </div>
-                    <Text size="base" variant="muted" className="mb-2 leading-relaxed text-sm">
+                    <Text size="base" variant="muted" className="mb-1.5 leading-relaxed text-sm pl-8">
                       {pillar.summary}
                     </Text>
-                    <div className="flex items-center text-teal-600 font-medium text-xs group-hover:text-teal-700 transition-all">
+                    <div className="flex items-center text-teal-600 font-medium text-xs group-hover:text-teal-700 transition-all pl-8">
                       Learn more
                       <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 transition-transform duration-300" />
                     </div>
