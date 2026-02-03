@@ -180,11 +180,11 @@ export default function Home({ onNavigate }: HomeProps) {
                       <div className={`flex-shrink-0 p-1.5 bg-gradient-to-br ${pillar.color} rounded-lg shadow-sm group-hover:scale-105 transition-transform duration-300`}>
                         <Icon className="w-3.5 h-3.5 text-white" />
                       </div>
-                      <Heading level={3} className="text-[15px] font-semibold group-hover:text-teal-700 transition-colors leading-tight">
+                      <Heading level={3} className="text-[6px] font-semibold group-hover:text-teal-700 transition-colors leading-tight">
                         {pillar.title}
                       </Heading>
                     </div>
-                    <Text size="base" variant="muted" className="mb-1.5 leading-relaxed text-sm pl-8">
+                    <Text size="base" variant="muted" className="mb-1.5 leading-relaxed text-[6px] pl-8">
                       {pillar.summary}
                     </Text>
                     <div className="flex items-center text-teal-600 font-medium text-xs group-hover:text-teal-700 transition-all pl-8">
