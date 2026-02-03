@@ -171,11 +171,11 @@ export default function Home({ onNavigate }: HomeProps) {
               const Icon = pillar.icon;
               const borderColors = [
                 'border-t-blue-500',
-                'border-t-cyan-500',
-                'border-t-indigo-500',
+                'border-t-green-500',
+                'border-t-orange-500',
                 'border-t-teal-500',
-                'border-t-emerald-500',
-                'border-t-sky-500'
+                'border-t-cyan-500',
+                'border-t-indigo-500'
               ];
               return (
                 <div
@@ -184,18 +184,12 @@ export default function Home({ onNavigate }: HomeProps) {
                   onClick={() => setSelectedPillar(index)}
                 >
                   <div className={`bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-t-4 ${borderColors[index]} p-6 h-full flex flex-col`}>
-                    <div className="mb-3">
-                      <Badge variant="secondary" className="text-xs">
-                        Research Area
-                      </Badge>
-                      <span className="text-sm text-gray-500 ml-2">2024</span>
-                    </div>
-                    <Heading level={3} className="text-lg font-bold mb-3 text-gray-900 group-hover:text-teal-700 transition-colors">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 leading-tight group-hover:text-teal-700 transition-colors">
                       {pillar.title}
-                    </Heading>
-                    <Text size="base" variant="muted" className="mb-4 leading-relaxed text-sm flex-grow">
+                    </h3>
+                    <p className="mb-4 leading-relaxed text-sm text-gray-600 flex-grow">
                       {pillar.summary}
-                    </Text>
+                    </p>
                     <div className="flex items-center text-blue-600 font-medium text-sm group-hover:text-blue-700 transition-all">
                       Download PDF
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
