@@ -30,7 +30,7 @@ function AnimatedStat({ value, label, suffix = '' }: { value: number; label: str
   }, [isVisible]);
 
   return (
-    <div ref={ref} className="text-center relative z-10">
+    <div ref={ref} className="text-center relative">
       <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 hover:border-white/40 cursor-default">
         <div className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-tight">
           {current}{suffix}
@@ -140,7 +140,7 @@ export default function Home({ onNavigate }: HomeProps) {
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl -ml-32 -mb-32"></div>
-          <div className="grid md:grid-cols-3 gap-4 relative z-10">
+          <div className="grid md:grid-cols-3 gap-4 relative">
             <AnimatedStat value={12} label="Research Areas" />
             <AnimatedStat value={8} label="Jurisdictions" />
             <AnimatedStat value={100} label="Participants" suffix="K+" />
@@ -152,7 +152,7 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div className="relative z-10">
+        <div className="relative">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-teal-100 text-teal-800 rounded-full mb-3 font-bold text-xs shadow-md">
               <Target className="w-4 h-4" />
@@ -237,7 +237,7 @@ export default function Home({ onNavigate }: HomeProps) {
       </div>
 
       <Section ref={methodRef.ref} background="gray" spacing="sm" className={`relative ${methodRef.isVisible ? 'fade-in' : ''}`}>
-        <div className="relative z-10">
+        <div className="relative">
           <div className="text-center mb-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-full mb-3 font-bold text-xs shadow-lg">
               <CheckCircle2 className="w-4 h-4" />
@@ -308,7 +308,7 @@ export default function Home({ onNavigate }: HomeProps) {
       <Section background="white" spacing="xs" className="relative pt-12">
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-teal-500/10 to-transparent rounded-full blur-3xl -ml-48 -mb-48 pointer-events-none"></div>
 
-        <div className="text-center mb-8 relative z-10">
+        <div className="text-center mb-8 relative">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-stone-100 text-stone-700 rounded-full mb-3 font-bold text-xs shadow-md">
             <FileText className="w-4 h-4" />
             Scope
@@ -318,7 +318,7 @@ export default function Home({ onNavigate }: HomeProps) {
           </Heading>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 relative z-10 max-w-6xl mx-auto items-start">
+        <div className="grid md:grid-cols-2 gap-6 relative max-w-6xl mx-auto items-start">
           <div className="group">
             <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-teal-200 p-6 shadow-xl h-fit">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-full blur-2xl"></div>
