@@ -26,7 +26,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fade-in" />
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-md animate-fade-in" />
       <div
         className="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto animate-modal-in"
         onClick={(e) => e.stopPropagation()}
