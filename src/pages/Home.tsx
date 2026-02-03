@@ -180,7 +180,7 @@ export default function Home({ onNavigate }: HomeProps) {
                       <div className={`p-1.5 bg-gradient-to-br ${pillar.color} rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300`}>
                         <Icon className="w-3 h-3 text-white" />
                       </div>
-                      <Heading level={3} className="text-[8px] font-bold tracking-tight group-hover:text-teal-700 transition-colors leading-tight uppercase">
+                      <Heading level={3} className="text-[7px] font-medium group-hover:text-teal-700 transition-colors leading-tight">
                         {pillar.title}
                       </Heading>
                     </div>
