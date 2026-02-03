@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, Users, Globe, FileText, Database, Shield, Layout, CheckCircle2, Target, TrendingUp, ChevronDown } from 'lucide-react';
+import { ArrowRight, Users, Globe, FileText, Database, Shield, Layout, CheckCircle2, Target, TrendingUp, Sparkles, AlertCircle, Ban } from 'lucide-react';
+import Modal from '../components/Modal';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useAnimatedNumber } from '../hooks/useAnimatedNumber';
 import Hero from '../components/layout/Hero';
@@ -41,7 +42,7 @@ function AnimatedStat({ value, label, suffix = '' }: { value: number; label: str
 }
 
 export default function Home({ onNavigate }: HomeProps) {
-  const [expandedPillar, setExpandedPillar] = useState<number | null>(null);
+  const [selectedPillar, setSelectedPillar] = useState<number | null>(null);
   const heroRef = useScrollAnimation();
   const domainsRef = useScrollAnimation();
   const methodRef = useScrollAnimation();
@@ -103,26 +104,26 @@ export default function Home({ onNavigate }: HomeProps) {
         rounded={true}
       >
         <div ref={heroRef.ref} className={`text-center ${heroRef.isVisible ? 'fade-in-up' : ''}`}>
-          <div className="inline-block px-5 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/30">
+          <div className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full mb-4 border border-white/30">
             <span className="text-white text-xs font-bold tracking-wide uppercase">Structured Research Platform</span>
           </div>
-          <Heading level={1} align="center" className="mb-6 text-white drop-shadow-lg leading-tight text-4xl md:text-5xl">
+          <Heading level={1} align="center" className="mb-4 text-white drop-shadow-lg leading-tight text-3xl md:text-4xl">
             User Experience Research in <br/><span className="font-bold bg-gradient-to-r from-teal-200 to-cyan-200 bg-clip-text text-transparent">Age-Restricted Digital Environments</span>
           </Heading>
-          <Text size="xl" variant="light" className="max-w-2xl mx-auto mb-8 drop-shadow-sm text-white/90 leading-relaxed text-base">
+          <Text size="xl" variant="light" className="max-w-2xl mx-auto mb-6 drop-shadow-sm text-white/90 leading-relaxed text-sm">
             SignalPanel conducts panel-based research to document how users interact with regulated digital platforms across jurisdictions.
           </Text>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <button
               onClick={() => onNavigate('Methodology')}
-              className="group px-6 py-3 bg-white text-teal-800 hover:bg-teal-50 transition-all text-sm font-semibold tracking-wide flex items-center gap-2 shadow-xl rounded-xl hover:-translate-y-1 duration-300"
+              className="group px-5 py-2.5 bg-white text-teal-800 hover:bg-teal-50 transition-all text-sm font-semibold tracking-wide flex items-center gap-2 shadow-xl rounded-xl hover:-translate-y-1 duration-300"
             >
               View Methodology
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
             </button>
             <button
               onClick={() => onNavigate('Research Areas')}
-              className="px-6 py-3 text-white hover:text-teal-100 transition-all text-sm font-semibold tracking-wide border-2 border-white/50 hover:border-white rounded-xl hover:-translate-y-1 duration-300"
+              className="px-5 py-2.5 text-white hover:text-teal-100 transition-all text-sm font-semibold tracking-wide border-2 border-white/50 hover:border-white rounded-xl hover:-translate-y-1 duration-300"
             >
               Explore Research Areas
             </button>
@@ -166,12 +167,11 @@ export default function Home({ onNavigate }: HomeProps) {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {researchPillars.map((pillar, index) => {
               const Icon = pillar.icon;
-              const isExpanded = expandedPillar === index;
               return (
                 <div
                   key={index}
                   className="group cursor-pointer"
-                  onClick={() => setExpandedPillar(isExpanded ? null : index)}
+                  onClick={() => setSelectedPillar(index)}
                 >
                   <Card variant="compact" padding="sm" hover3d className="relative h-full bg-white">
                     <div className="flex items-center gap-3 mb-3">
@@ -185,22 +185,44 @@ export default function Home({ onNavigate }: HomeProps) {
                     <Text size="base" variant="muted" className="mb-2 leading-relaxed text-xs">
                       {pillar.summary}
                     </Text>
-                    {isExpanded && (
-                      <div className="mt-2 pt-2 border-t border-teal-100 fade-in">
-                        <Text size="base" variant="muted" className="leading-relaxed text-xs">
-                          {pillar.detail}
-                        </Text>
-                      </div>
-                    )}
                     <div className="mt-2 flex items-center text-teal-600 font-semibold text-xs group-hover:text-teal-700 transition-all">
-                      {isExpanded ? 'Show less' : 'Learn more'}
-                      <ChevronDown className={`w-3.5 h-3.5 ml-1 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                      Learn more
+                      <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </Card>
                 </div>
               );
             })}
           </div>
+
+          <Modal isOpen={selectedPillar !== null} onClose={() => setSelectedPillar(null)}>
+            {selectedPillar !== null && (
+              <div className="p-8">
+                {(() => {
+                  const pillar = researchPillars[selectedPillar];
+                  const Icon = pillar.icon;
+                  return (
+                    <>
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className={`p-3 bg-gradient-to-br ${pillar.color} rounded-xl shadow-lg`}>
+                          <Icon className="w-8 h-8 text-white" />
+                        </div>
+                        <Heading level={2} className="text-2xl">{pillar.title}</Heading>
+                      </div>
+                      <div className="mb-4">
+                        <Text size="lg" className="text-teal-700 font-semibold mb-3">Overview</Text>
+                        <Text size="base" variant="body" className="leading-relaxed">{pillar.summary}</Text>
+                      </div>
+                      <div>
+                        <Text size="lg" className="text-teal-700 font-semibold mb-3">Research Focus</Text>
+                        <Text size="base" variant="body" className="leading-relaxed">{pillar.detail}</Text>
+                      </div>
+                    </>
+                  );
+                })()}
+              </div>
+            )}
+          </Modal>
         </div>
       </Section>
 
@@ -291,63 +313,70 @@ export default function Home({ onNavigate }: HomeProps) {
           </Heading>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 relative z-10">
+        <div className="grid md:grid-cols-2 gap-6 relative z-10">
           <div className="group hover-3d-card">
-            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-teal-600 to-teal-700 p-5 shadow-xl h-full">
-              <div className="absolute -right-12 -bottom-12 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+            <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-teal-200 p-6 shadow-xl h-full">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-full blur-2xl"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-white/20 backdrop-blur-sm rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <CheckCircle2 className="w-5 h-5 text-white" />
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2.5 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                    <Sparkles className="w-6 h-6 text-white" />
                   </div>
-                  <Heading level={3} className="text-white text-sm font-bold">Organizational Activities</Heading>
+                  <Heading level={3} className="text-teal-900 text-base font-bold">What We Do</Heading>
                 </div>
-                <div className="space-y-2.5">
+
+                <div className="space-y-4">
                   {[
-                    'Conduct structured, independent research on user experience in regulated digital environments',
-                    'Observe and document user interaction patterns across diverse participant populations',
-                    'Report findings at an aggregated level without identifying individual users or platforms',
-                    'Maintain methodological transparency through published research protocols',
-                    'Document jurisdictional variations in user experience and interface implementation'
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3 group/item">
-                      <div className="relative mt-1.5">
-                        <div className="w-2 h-2 bg-white rounded-full"></div>
-                        <div className="absolute inset-0 w-2 h-2 bg-white rounded-full animate-ping opacity-75"></div>
+                    { icon: Target, text: 'Conduct structured, independent research on user experience in regulated digital environments' },
+                    { icon: Users, text: 'Observe and document user interaction patterns across diverse participant populations' },
+                    { icon: Database, text: 'Report findings at an aggregated level without identifying individual users or platforms' },
+                    { icon: FileText, text: 'Maintain methodological transparency through published research protocols' },
+                    { icon: Globe, text: 'Document jurisdictional variations in user experience and interface implementation' }
+                  ].map((item, idx) => {
+                    const ItemIcon = item.icon;
+                    return (
+                      <div key={idx} className="group/item flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-teal-50 to-cyan-50 hover:from-teal-100 hover:to-cyan-100 transition-all duration-300 border border-teal-100/50">
+                        <div className="p-1.5 bg-white rounded-lg shadow-sm group-hover/item:shadow-md transition-shadow flex-shrink-0 mt-0.5">
+                          <ItemIcon className="w-3.5 h-3.5 text-teal-600" />
+                        </div>
+                        <Text size="base" className="text-stone-700 leading-relaxed text-xs flex-1">{item.text}</Text>
                       </div>
-                      <Text size="base" className="text-white/95 leading-relaxed text-xs flex-1">{item}</Text>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
           </div>
 
           <div className="group hover-3d-card">
-            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-stone-700 to-stone-800 p-5 shadow-xl h-full">
-              <div className="absolute -right-12 -bottom-12 w-32 h-32 bg-stone-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+            <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-stone-300 p-6 shadow-xl h-full">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-stone-400/10 to-stone-500/10 rounded-full blur-2xl"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-white/10 backdrop-blur-sm rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <FileText className="w-5 h-5 text-white" />
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2.5 bg-gradient-to-br from-stone-600 to-stone-700 rounded-xl shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                    <Ban className="w-6 h-6 text-white" />
                   </div>
-                  <Heading level={3} className="text-white text-sm font-bold">Excluded Activities</Heading>
+                  <Heading level={3} className="text-stone-900 text-base font-bold">What We Don't Do</Heading>
                 </div>
-                <div className="space-y-2.5">
+
+                <div className="space-y-4">
                   {[
-                    'Platform promotion, endorsement, or ranking services',
-                    'Optimization consulting, marketing services, or compliance advice',
-                    'Claims about user outcomes, behavior modification, or intervention effectiveness',
-                    'Commercial partnerships with platforms under observation',
-                    'Legal or regulatory compliance certification'
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3 group/item">
-                      <div className="w-6 h-6 flex items-center justify-center bg-white/10 rounded backdrop-blur-sm flex-shrink-0 mt-0.5">
-                        <span className="text-white/80 text-xs font-bold">{idx + 1}</span>
+                    { icon: AlertCircle, text: 'Platform promotion, endorsement, or ranking services' },
+                    { icon: TrendingUp, text: 'Optimization consulting, marketing services, or compliance advice' },
+                    { icon: Target, text: 'Claims about user outcomes, behavior modification, or intervention effectiveness' },
+                    { icon: Users, text: 'Commercial partnerships with platforms under observation' },
+                    { icon: Shield, text: 'Legal or regulatory compliance certification' }
+                  ].map((item, idx) => {
+                    const ItemIcon = item.icon;
+                    return (
+                      <div key={idx} className="group/item flex items-start gap-3 p-3 rounded-lg bg-stone-50 hover:bg-stone-100 transition-all duration-300 border border-stone-200/50">
+                        <div className="p-1.5 bg-white rounded-lg shadow-sm group-hover/item:shadow-md transition-shadow flex-shrink-0 mt-0.5">
+                          <ItemIcon className="w-3.5 h-3.5 text-stone-600" />
+                        </div>
+                        <Text size="base" className="text-stone-700 leading-relaxed text-xs flex-1">{item.text}</Text>
                       </div>
-                      <Text size="base" className="text-white/90 leading-relaxed text-xs flex-1">{item}</Text>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
