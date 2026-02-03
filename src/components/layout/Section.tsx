@@ -17,9 +17,9 @@ const backgrounds = {
 };
 
 const spacings = {
-  sm: 'py-12 md:py-16',
-  md: 'py-16 md:py-20',
-  lg: 'py-20 md:py-24'
+  sm: 'py-8 md:py-12',
+  md: 'py-12 md:py-16',
+  lg: 'py-16 md:py-20'
 };
 
 export default function Section({

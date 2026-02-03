@@ -130,14 +130,14 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </Hero>
 
-      <div className="h-16"></div>
+      <div className="h-6"></div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="bg-gradient-to-br from-teal-700 via-teal-600 to-cyan-600 rounded-2xl shadow-2xl p-8 md:p-10 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-teal-700 via-teal-600 to-cyan-600 rounded-2xl shadow-2xl p-6 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl -ml-32 -mb-32"></div>
-          <div className="grid md:grid-cols-3 gap-6 relative z-10">
+          <div className="grid md:grid-cols-3 gap-4 relative z-10">
             <AnimatedStat value={12} label="Research Areas" />
             <AnimatedStat value={8} label="Jurisdictions" />
             <AnimatedStat value={100} label="Participants" suffix="K+" />
@@ -145,25 +145,25 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </div>
 
-      <Section ref={domainsRef.ref} background="white" spacing="md" className={`relative ${domainsRef.isVisible ? 'fade-in' : ''}`}>
+      <Section ref={domainsRef.ref} background="white" spacing="sm" className={`relative ${domainsRef.isVisible ? 'fade-in' : ''}`}>
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="relative z-10">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-100 text-teal-800 rounded-full mb-4 font-bold text-xs shadow-md">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-teal-100 text-teal-800 rounded-full mb-3 font-bold text-xs shadow-md">
               <Target className="w-4 h-4" />
               Research Domains
             </div>
-            <Heading level={2} align="center" className="mb-3 text-3xl">
+            <Heading level={2} align="center" className="mb-2 text-2xl">
               Core Research Domains
             </Heading>
-            <Text size="lg" variant="muted" className="max-w-2xl mx-auto leading-relaxed text-base">
+            <Text size="lg" variant="muted" className="max-w-2xl mx-auto leading-relaxed text-sm">
               SignalPanel organizes investigation around six foundational areas of user experience in regulated digital environments.
             </Text>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {researchPillars.map((pillar, index) => {
               const Icon = pillar.icon;
               const isExpanded = expandedPillar === index;
@@ -174,25 +174,27 @@ export default function Home({ onNavigate }: HomeProps) {
                   onClick={() => setExpandedPillar(isExpanded ? null : index)}
                 >
                   <Card variant="compact" padding="sm" hover3d className="relative h-full bg-white">
-                    <div className={`mb-3 p-2.5 bg-gradient-to-br ${pillar.color} inline-flex rounded-lg shadow-md`}>
-                      <Icon className="w-5 h-5 text-white" />
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`p-2 bg-gradient-to-br ${pillar.color} rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className="w-4 h-4 text-white" />
+                      </div>
+                      <Heading level={3} className="text-sm font-semibold group-hover:text-teal-700 transition-colors">
+                        {pillar.title}
+                      </Heading>
                     </div>
-                    <Heading level={3} className="mb-2 text-base group-hover:text-teal-700 transition-colors">
-                      {pillar.title}
-                    </Heading>
-                    <Text size="base" variant="muted" className="mb-3 leading-relaxed text-sm">
+                    <Text size="base" variant="muted" className="mb-2 leading-relaxed text-xs">
                       {pillar.summary}
                     </Text>
                     {isExpanded && (
-                      <div className="mt-3 pt-3 border-t border-teal-100 fade-in">
-                        <Text size="base" variant="muted" className="leading-relaxed text-sm">
+                      <div className="mt-2 pt-2 border-t border-teal-100 fade-in">
+                        <Text size="base" variant="muted" className="leading-relaxed text-xs">
                           {pillar.detail}
                         </Text>
                       </div>
                     )}
-                    <div className="mt-3 flex items-center text-teal-600 font-semibold text-xs group-hover:text-teal-700 transition-all">
+                    <div className="mt-2 flex items-center text-teal-600 font-semibold text-xs group-hover:text-teal-700 transition-all">
                       {isExpanded ? 'Show less' : 'Learn more'}
-                      <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-3.5 h-3.5 ml-1 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
                     </div>
                   </Card>
                 </div>
@@ -202,59 +204,65 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </Section>
 
-      <div className="relative h-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-600 via-cyan-500 to-teal-600 transform -skew-y-3 origin-top-left shadow-xl"></div>
+      <div className="relative h-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-600 via-cyan-500 to-teal-600 transform -skew-y-2 origin-top-left shadow-xl"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       </div>
 
-      <Section ref={methodRef.ref} background="gray" spacing="md" className={`relative ${methodRef.isVisible ? 'fade-in' : ''}`}>
+      <Section ref={methodRef.ref} background="gray" spacing="sm" className={`relative ${methodRef.isVisible ? 'fade-in' : ''}`}>
         <div className="relative z-10">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-full mb-4 font-bold text-xs shadow-lg">
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-full mb-3 font-bold text-xs shadow-lg">
               <CheckCircle2 className="w-4 h-4" />
               Methodology
             </div>
-            <Heading level={2} align="center" className="mb-4 text-3xl">
+            <Heading level={2} align="center" className="mb-2 text-2xl">
               Methodological Framework
             </Heading>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <div className="grid md:grid-cols-3 gap-4 mb-6">
             {[
-              { title: 'Panel Construction', desc: 'Recruitment and qualification of demographically diverse participant groups following structured selection criteria.', icon: Users },
-              { title: 'Structured Observation', desc: 'Execution of controlled research protocols ensuring consistency and methodological integrity.', icon: Target },
-              { title: 'Aggregated Analysis', desc: 'Synthesis of behavioral data into aggregated reports focusing on systemic observations.', icon: TrendingUp }
+              { title: 'Panel Construction', desc: 'Recruitment and qualification of demographically diverse participant groups following structured selection criteria.', icon: Users, color: 'from-teal-500 to-cyan-600' },
+              { title: 'Structured Observation', desc: 'Execution of controlled research protocols ensuring consistency and methodological integrity.', icon: Target, color: 'from-cyan-500 to-blue-600' },
+              { title: 'Aggregated Analysis', desc: 'Synthesis of behavioral data into aggregated reports focusing on systemic observations.', icon: TrendingUp, color: 'from-blue-500 to-teal-600' }
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <Card key={idx} variant="hover-lift" padding="md" hover3d className="text-center bg-white h-full">
-                  <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Icon className="w-7 h-7 text-white" />
+                <div key={idx} className="group hover-3d-card">
+                  <div className={`relative overflow-hidden rounded-xl bg-gradient-to-br ${item.color} p-6 shadow-xl h-full`}>
+                    <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-500"></div>
+                    <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <Heading level={3} className="text-white mb-2 text-sm font-bold">{item.title}</Heading>
+                      <Text size="base" className="text-white/90 leading-relaxed text-xs">
+                        {item.desc}
+                      </Text>
+                    </div>
                   </div>
-                  <Heading level={3} align="center" className="mb-3 text-base">{item.title}</Heading>
-                  <Text size="base" variant="muted" className="leading-relaxed text-sm">
-                    {item.desc}
-                  </Text>
-                </Card>
+                </div>
               );
             })}
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-700 via-teal-600 to-cyan-600 p-6 md:p-8 shadow-2xl">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full blur-3xl -mr-24 -mt-24"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl -ml-24 -mb-24"></div>
+            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-stone-800 via-stone-700 to-stone-800 p-5 shadow-2xl group hover-3d-card">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-teal-500/20 rounded-full blur-3xl -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl -ml-20 -mb-20 group-hover:scale-150 transition-transform duration-700"></div>
               <div className="relative z-10">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm flex-shrink-0">
-                    <Shield className="w-6 h-6 text-white" />
+                <div className="flex items-start gap-3">
+                  <div className="p-2.5 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <Shield className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <Heading level={3} className="text-white mb-3 text-lg">Independent Research Organization</Heading>
-                    <Text size="lg" className="text-white/95 mb-3 leading-relaxed text-sm">
+                    <Heading level={3} className="text-white mb-2 text-base font-bold">Independent Research Organization</Heading>
+                    <Text size="lg" className="text-white/90 mb-2 leading-relaxed text-xs">
                       SignalPanel operates as an independent research organization focused on the design, execution, and analysis of structured user research in regulated digital environments.
                     </Text>
-                    <Text size="lg" className="text-white/95 leading-relaxed text-sm">
+                    <Text size="lg" className="text-white/90 leading-relaxed text-xs">
                       Work emphasizes methodological consistency, panel integrity, and aggregated findings rather than individual outcomes or platform-specific performance claims.
                     </Text>
                   </div>
@@ -265,74 +273,85 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </Section>
 
-      <div className="relative h-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-l from-teal-600 via-cyan-500 to-teal-600 transform skew-y-3 origin-top-left shadow-xl"></div>
+      <div className="relative h-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-l from-teal-600 via-cyan-500 to-teal-600 transform skew-y-2 origin-top-left shadow-xl"></div>
         <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/10 to-transparent"></div>
       </div>
 
-      <Section background="white" spacing="md" className="relative">
+      <Section background="white" spacing="sm" className="relative">
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-teal-500/10 to-transparent rounded-full blur-3xl -ml-48 -mb-48 pointer-events-none"></div>
 
-        <div className="text-center mb-10 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-stone-100 text-stone-700 rounded-full mb-4 font-bold text-xs shadow-md">
+        <div className="text-center mb-6 relative z-10">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-stone-100 text-stone-700 rounded-full mb-3 font-bold text-xs shadow-md">
             <FileText className="w-4 h-4" />
             Scope
           </div>
-          <Heading level={2} align="center" className="mb-3 text-3xl">
+          <Heading level={2} align="center" className="mb-2 text-2xl">
             Research Scope & Boundaries
           </Heading>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 relative z-10">
-          <Card variant="compact" padding="md" className="border-l-4 border-teal-600 hover:shadow-xl transition-shadow duration-300">
-            <div className="mb-4">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-teal-100 rounded-lg">
-                  <CheckCircle2 className="w-5 h-5 text-teal-700" />
+        <div className="grid md:grid-cols-2 gap-4 relative z-10">
+          <div className="group hover-3d-card">
+            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-teal-600 to-teal-700 p-5 shadow-xl h-full">
+              <div className="absolute -right-12 -bottom-12 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-white/20 backdrop-blur-sm rounded-lg group-hover:scale-110 transition-transform duration-300">
+                    <CheckCircle2 className="w-5 h-5 text-white" />
+                  </div>
+                  <Heading level={3} className="text-white text-sm font-bold">Organizational Activities</Heading>
                 </div>
-                <Heading level={3} className="text-base">Organizational Activities</Heading>
+                <div className="space-y-2.5">
+                  {[
+                    'Conduct structured, independent research on user experience in regulated digital environments',
+                    'Observe and document user interaction patterns across diverse participant populations',
+                    'Report findings at an aggregated level without identifying individual users or platforms',
+                    'Maintain methodological transparency through published research protocols',
+                    'Document jurisdictional variations in user experience and interface implementation'
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-3 group/item">
+                      <div className="relative mt-1.5">
+                        <div className="w-2 h-2 bg-white rounded-full"></div>
+                        <div className="absolute inset-0 w-2 h-2 bg-white rounded-full animate-ping opacity-75"></div>
+                      </div>
+                      <Text size="base" className="text-white/95 leading-relaxed text-xs flex-1">{item}</Text>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="space-y-2">
-              {[
-                'Conduct structured, independent research on user experience in regulated digital environments',
-                'Observe and document user interaction patterns across diverse participant populations',
-                'Report findings at an aggregated level without identifying individual users or platforms',
-                'Maintain methodological transparency through published research protocols',
-                'Document jurisdictional variations in user experience and interface implementation'
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-3 bg-teal-50/50 rounded-lg hover:bg-teal-50 transition-all duration-200">
-                  <div className="w-1.5 h-1.5 bg-teal-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <Text size="base" variant="body" className="leading-relaxed text-sm">{item}</Text>
-                </div>
-              ))}
-            </div>
-          </Card>
+          </div>
 
-          <Card variant="compact" padding="md" className="border-l-4 border-stone-400 bg-stone-50/50 hover:shadow-xl transition-shadow duration-300">
-            <div className="mb-4">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-stone-200 rounded-lg">
-                  <FileText className="w-5 h-5 text-stone-600" />
+          <div className="group hover-3d-card">
+            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-stone-700 to-stone-800 p-5 shadow-xl h-full">
+              <div className="absolute -right-12 -bottom-12 w-32 h-32 bg-stone-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-white/10 backdrop-blur-sm rounded-lg group-hover:scale-110 transition-transform duration-300">
+                    <FileText className="w-5 h-5 text-white" />
+                  </div>
+                  <Heading level={3} className="text-white text-sm font-bold">Excluded Activities</Heading>
                 </div>
-                <Heading level={3} className="text-stone-600 text-base">Excluded Activities</Heading>
+                <div className="space-y-2.5">
+                  {[
+                    'Platform promotion, endorsement, or ranking services',
+                    'Optimization consulting, marketing services, or compliance advice',
+                    'Claims about user outcomes, behavior modification, or intervention effectiveness',
+                    'Commercial partnerships with platforms under observation',
+                    'Legal or regulatory compliance certification'
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-3 group/item">
+                      <div className="w-6 h-6 flex items-center justify-center bg-white/10 rounded backdrop-blur-sm flex-shrink-0 mt-0.5">
+                        <span className="text-white/80 text-xs font-bold">{idx + 1}</span>
+                      </div>
+                      <Text size="base" className="text-white/90 leading-relaxed text-xs flex-1">{item}</Text>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="space-y-2">
-              {[
-                'Platform promotion, endorsement, or ranking services',
-                'Optimization consulting, marketing services, or compliance advice',
-                'Claims about user outcomes, behavior modification, or intervention effectiveness',
-                'Commercial partnerships with platforms under observation',
-                'Legal or regulatory compliance certification'
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-3 bg-white/70 rounded-lg hover:bg-white transition-all duration-200">
-                  <div className="w-1.5 h-1.5 bg-stone-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <Text size="base" variant="muted" className="leading-relaxed text-sm">{item}</Text>
-                </div>
-              ))}
-            </div>
-          </Card>
+          </div>
         </div>
       </Section>
 
