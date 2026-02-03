@@ -16,9 +16,9 @@ const overlays = {
 };
 
 const heights = {
-  sm: 'min-h-[400px] md:min-h-[500px]',
-  md: 'min-h-[500px] md:min-h-[600px]',
-  lg: 'min-h-[600px] md:min-h-[700px]'
+  sm: 'min-h-[300px] md:min-h-[380px]',
+  md: 'min-h-[400px] md:min-h-[480px]',
+  lg: 'min-h-[500px] md:min-h-[600px]'
 };
 
 export default function Hero({
@@ -45,7 +45,7 @@ export default function Hero({
             <div className={`absolute inset-0 ${overlays[overlay]}`}></div>
           </div>
         )}
-        <div className="relative z-10 w-full max-w-5xl mx-auto py-20 md:py-32">
+        <div className="relative z-10 w-full max-w-5xl mx-auto py-12 md:py-16">
           {children}
         </div>
       </div>
