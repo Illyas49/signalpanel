@@ -302,10 +302,10 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/10 to-transparent"></div>
       </div>
 
-      <Section background="white" spacing="xs" className="relative">
+      <Section background="white" spacing="xs" className="relative pt-12">
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-teal-500/10 to-transparent rounded-full blur-3xl -ml-48 -mb-48 pointer-events-none"></div>
 
-        <div className="text-center mb-6 relative z-10">
+        <div className="text-center mb-8 relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-stone-100 text-stone-700 rounded-full mb-3 font-bold text-xs shadow-md">
             <FileText className="w-4 h-4" />
             Scope
