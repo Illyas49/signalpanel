@@ -183,7 +183,7 @@ export default function Home({ onNavigate }: HomeProps) {
                   className="group cursor-pointer"
                   onClick={() => setSelectedPillar(index)}
                 >
-                  <div className={`bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-t-4 ${borderColors[index]} p-6 h-full flex flex-col`}>
+                  <div className={`bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-t-4 ${borderColors[index]} px-6 pt-4 pb-6 h-full flex flex-col`}>
                     <h3 className="text-lg font-bold mb-3 text-gray-900 leading-tight group-hover:text-teal-700 transition-colors">
                       {pillar.title}
                     </h3>
@@ -191,7 +191,7 @@ export default function Home({ onNavigate }: HomeProps) {
                       {pillar.summary}
                     </p>
                     <div className="flex items-center text-blue-600 font-medium text-sm group-hover:text-blue-700 transition-all">
-                      Download PDF
+                      Learn more
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </div>
