@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, Users, Globe, FileText, Database, Shield, Layout, CheckCircle2, Target, TrendingUp, Sparkles, AlertCircle, Ban } from 'lucide-react';
+import { ArrowRight, Users, Globe, FileText, Database, Shield, Layout, CheckCircle2, Target, TrendingUp, Sparkles, AlertCircle, Ban, ChevronDown } from 'lucide-react';
 import Modal from '../components/Modal';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useAnimatedNumber } from '../hooks/useAnimatedNumber';
@@ -43,6 +43,8 @@ function AnimatedStat({ value, label, suffix = '' }: { value: number; label: str
 
 export default function Home({ onNavigate }: HomeProps) {
   const [selectedPillar, setSelectedPillar] = useState<number | null>(null);
+  const [expandedWeDo, setExpandedWeDo] = useState<number | null>(null);
+  const [expandedWeDont, setExpandedWeDont] = useState<number | null>(null);
   const heroRef = useScrollAnimation();
   const domainsRef = useScrollAnimation();
   const methodRef = useScrollAnimation();
@@ -313,33 +315,67 @@ export default function Home({ onNavigate }: HomeProps) {
           </Heading>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 relative z-10">
-          <div className="group hover-3d-card">
-            <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-teal-200 p-6 shadow-xl h-full">
+        <div className="grid md:grid-cols-2 gap-6 relative z-10 max-w-6xl mx-auto">
+          <div className="group">
+            <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-teal-200 p-6 shadow-xl">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-full blur-2xl"></div>
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2.5 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                  <div className="p-2.5 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl shadow-md">
                     <Sparkles className="w-6 h-6 text-white" />
                   </div>
-                  <Heading level={3} className="text-teal-900 text-base font-bold">What We Do</Heading>
+                  <Heading level={3} className="text-teal-900 text-xl font-bold">What We Do</Heading>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-2">
                   {[
-                    { icon: Target, text: 'Conduct structured, independent research on user experience in regulated digital environments' },
-                    { icon: Users, text: 'Observe and document user interaction patterns across diverse participant populations' },
-                    { icon: Database, text: 'Report findings at an aggregated level without identifying individual users or platforms' },
-                    { icon: FileText, text: 'Maintain methodological transparency through published research protocols' },
-                    { icon: Globe, text: 'Document jurisdictional variations in user experience and interface implementation' }
+                    {
+                      icon: Target,
+                      title: 'Structured Independent Research',
+                      detail: 'We conduct rigorous, methodologically sound research on user experience in age-restricted and regulated digital environments. Our research follows established protocols and maintains independence from commercial influences.'
+                    },
+                    {
+                      icon: Users,
+                      title: 'Diverse User Observation',
+                      detail: 'We observe and document how real users interact with digital platforms across different demographic groups, experience levels, and behavioral patterns. This includes tracking navigation paths, comprehension challenges, and decision-making processes.'
+                    },
+                    {
+                      icon: Database,
+                      title: 'Aggregated Reporting',
+                      detail: 'Our findings are reported at an aggregated, anonymized level that protects individual privacy while revealing systemic patterns. We never identify specific users, platforms, or make comparative performance claims.'
+                    },
+                    {
+                      icon: FileText,
+                      title: 'Methodological Transparency',
+                      detail: 'We publish our research protocols, participant selection criteria, and analytical frameworks. This transparency allows others to evaluate our methodology and understand the scope and limitations of our findings.'
+                    },
+                    {
+                      icon: Globe,
+                      title: 'Jurisdictional Analysis',
+                      detail: 'We document how user experiences vary across different regulatory frameworks, cultural contexts, and regional implementations. This helps identify universal patterns as well as region-specific design considerations.'
+                    }
                   ].map((item, idx) => {
                     const ItemIcon = item.icon;
+                    const isExpanded = expandedWeDo === idx;
                     return (
-                      <div key={idx} className="group/item flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-teal-50 to-cyan-50 hover:from-teal-100 hover:to-cyan-100 transition-all duration-300 border border-teal-100/50">
-                        <div className="p-1.5 bg-white rounded-lg shadow-sm group-hover/item:shadow-md transition-shadow flex-shrink-0 mt-0.5">
-                          <ItemIcon className="w-3.5 h-3.5 text-teal-600" />
+                      <div key={idx} className="border border-teal-100 rounded-lg overflow-hidden bg-gradient-to-r from-teal-50/50 to-cyan-50/50 hover:border-teal-300 transition-all">
+                        <button
+                          onClick={() => setExpandedWeDo(isExpanded ? null : idx)}
+                          className="w-full flex items-center justify-between p-4 text-left hover:bg-teal-50/50 transition-colors"
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="p-1.5 bg-white rounded-lg shadow-sm">
+                              <ItemIcon className="w-4 h-4 text-teal-600" />
+                            </div>
+                            <Text size="base" className="text-stone-900 font-semibold text-sm">{item.title}</Text>
+                          </div>
+                          <ChevronDown className={`w-5 h-5 text-teal-600 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                        </button>
+                        <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-96' : 'max-h-0'}`}>
+                          <div className="px-4 pb-4 pt-0">
+                            <Text size="base" className="text-stone-700 leading-relaxed">{item.detail}</Text>
+                          </div>
                         </div>
-                        <Text size="base" className="text-stone-700 leading-relaxed text-xs flex-1">{item.text}</Text>
                       </div>
                     );
                   })}
@@ -348,32 +384,66 @@ export default function Home({ onNavigate }: HomeProps) {
             </div>
           </div>
 
-          <div className="group hover-3d-card">
-            <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-stone-300 p-6 shadow-xl h-full">
+          <div className="group">
+            <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-stone-300 p-6 shadow-xl">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-stone-400/10 to-stone-500/10 rounded-full blur-2xl"></div>
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2.5 bg-gradient-to-br from-stone-600 to-stone-700 rounded-xl shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                  <div className="p-2.5 bg-gradient-to-br from-stone-600 to-stone-700 rounded-xl shadow-md">
                     <Ban className="w-6 h-6 text-white" />
                   </div>
-                  <Heading level={3} className="text-stone-900 text-base font-bold">What We Don't Do</Heading>
+                  <Heading level={3} className="text-stone-900 text-xl font-bold">What We Don't Do</Heading>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-2">
                   {[
-                    { icon: AlertCircle, text: 'Platform promotion, endorsement, or ranking services' },
-                    { icon: TrendingUp, text: 'Optimization consulting, marketing services, or compliance advice' },
-                    { icon: Target, text: 'Claims about user outcomes, behavior modification, or intervention effectiveness' },
-                    { icon: Users, text: 'Commercial partnerships with platforms under observation' },
-                    { icon: Shield, text: 'Legal or regulatory compliance certification' }
+                    {
+                      icon: AlertCircle,
+                      title: 'Platform Promotion or Endorsement',
+                      detail: 'We do not provide endorsements, rankings, certifications, or promotional services for any platforms. Our research is observational and analytical, not evaluative or comparative in nature.'
+                    },
+                    {
+                      icon: TrendingUp,
+                      title: 'Optimization or Marketing Services',
+                      detail: 'We are not a consulting firm and do not offer optimization advice, marketing services, conversion rate improvement strategies, or user acquisition guidance to platforms or operators.'
+                    },
+                    {
+                      icon: Target,
+                      title: 'Outcome or Effectiveness Claims',
+                      detail: 'We do not make claims about user behavior modification, intervention effectiveness, harm reduction outcomes, or the real-world impact of specific design choices on user welfare or safety.'
+                    },
+                    {
+                      icon: Users,
+                      title: 'Commercial Platform Partnerships',
+                      detail: 'We maintain independence by avoiding commercial partnerships, sponsorships, or financial relationships with platforms under observation. Our funding model does not create conflicts of interest with research integrity.'
+                    },
+                    {
+                      icon: Shield,
+                      title: 'Compliance Certification',
+                      detail: 'We do not provide legal opinions, regulatory compliance assessments, audit services, or certifications regarding adherence to laws, regulations, or industry standards.'
+                    }
                   ].map((item, idx) => {
                     const ItemIcon = item.icon;
+                    const isExpanded = expandedWeDont === idx;
                     return (
-                      <div key={idx} className="group/item flex items-start gap-3 p-3 rounded-lg bg-stone-50 hover:bg-stone-100 transition-all duration-300 border border-stone-200/50">
-                        <div className="p-1.5 bg-white rounded-lg shadow-sm group-hover/item:shadow-md transition-shadow flex-shrink-0 mt-0.5">
-                          <ItemIcon className="w-3.5 h-3.5 text-stone-600" />
+                      <div key={idx} className="border border-stone-200 rounded-lg overflow-hidden bg-stone-50/50 hover:border-stone-400 transition-all">
+                        <button
+                          onClick={() => setExpandedWeDont(isExpanded ? null : idx)}
+                          className="w-full flex items-center justify-between p-4 text-left hover:bg-stone-100/50 transition-colors"
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="p-1.5 bg-white rounded-lg shadow-sm">
+                              <ItemIcon className="w-4 h-4 text-stone-600" />
+                            </div>
+                            <Text size="base" className="text-stone-900 font-semibold text-sm">{item.title}</Text>
+                          </div>
+                          <ChevronDown className={`w-5 h-5 text-stone-600 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                        </button>
+                        <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-96' : 'max-h-0'}`}>
+                          <div className="px-4 pb-4 pt-0">
+                            <Text size="base" className="text-stone-700 leading-relaxed">{item.detail}</Text>
+                          </div>
                         </div>
-                        <Text size="base" className="text-stone-700 leading-relaxed text-xs flex-1">{item.text}</Text>
                       </div>
                     );
                   })}
